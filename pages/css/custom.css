@@ -1,4 +1,3 @@
-
 .Content-display {
     display: flex;
     justify-content: center;
@@ -6,9 +5,12 @@
     height: 100vh;
 }
 
+/* Ajuste para permitir larguras proporcionais */
 .input-group {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Alinhar os campos horizontalmente */
+    flex-direction: row;
+    gap: 10px; /* Espaçamento entre os campos */
+    align-items: center; /* Centralizar os campos verticalmente */
 }
 
 #campos-de-entrada input {
@@ -17,7 +19,21 @@
     color: white;
     margin-bottom: 10px;
     padding: 5px;
-    width: 100%;
+}
+
+#ValorInicial {
+    flex: 2; /* Proporção maior para o valor inicial */
+    padding: 5px;
+}
+
+#Taxa {
+    flex: 1; /* Proporção menor para a taxa */
+    padding: 5px;
+}
+
+#Tempo {
+    flex: 1; /* Proporção menor para o tempo */
+    padding: 5px;
 }
 
 #resultado {
@@ -36,14 +52,15 @@
     color: white;
 }
 #opt {
-    background: rgb(255,0,230);
-    background: linear-gradient(90deg, rgba(255,0,230,0.7525385154061625) 0%, rgba(255,0,0,0.3883928571428571) 36%, rgba(0,60,190,0.16430322128851538) 100%);
-    color: black;
+    background: rgb(253, 253, 253);
+    font-display: swap;
 }
 
 #Taxa {
-    width: 30%;
+    flex: 1; /* Proporção menor para a taxa */
+    padding: 5px;
 }
+
 #Valorinicial {
     width: 30%;
 }
@@ -54,3 +71,4 @@
     color: white;
     font-weight: bold;
 }
+

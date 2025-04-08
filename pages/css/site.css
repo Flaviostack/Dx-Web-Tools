@@ -52,12 +52,16 @@ p {
 }
 
 #titulo {
-    color: rgb(36, 0, 0);
-    background: linear-gradient(90deg, rgba(36, 0, 0, 1) 0%, rgba(121, 9, 116, 1) 50%, rgba(255, 0, 50, 1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    text-align: center;
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 3rem;
+    background: rgb(255,0,0);
+    color:linear-gradient(60deg, rgba(255,0,0,1) 0%, rgba(158,0,109,1) 44%, rgba(46,0,230,1) 64%);
 
+    -webkit-background-clip: text;
+}
+   
+   
 .Content-display {
     margin-top: -20px;
     display: flex;
@@ -70,6 +74,7 @@ p {
     display: flex;
     flex-direction: column;
 }
+
 
 #campos-de-entrada input {
     margin-bottom: 10px;

@@ -1,5 +1,3 @@
-alert("Bem vindo ao sistema de recebimento de dados!");
-
 let valorInicial = document.getElementById("valor-inicial");
 
 function testar() {
