@@ -28,9 +28,10 @@
             </select>
 
             <div id="campos-de-entrada" class="flex-container">
-                <p>Valor inicial da aplicação</p>
+                <p>Valores da aplicação</p>
                 <div class="input-group">
-                    <input type="number" id="ValorInicial" placeholder="R$ 100,00" min="1">
+                    <input type="number" id="ValorInicial" placeholder="Valor inicial" min="1">
+                    <input type="number" id="AporteMensal" placeholder="Aportes mensais" min="0">
                 </div>
 
                 <p>Taxa de Juros (%)</p>
@@ -46,8 +47,9 @@
 
             <button id="Calcular" type="button" onclick="calcularInvestimento()">Calcular</button>
             <div id="resultado">
-                <p>Valor Final:</p>
-                <p id="Valor-final">R$ 0,00</p>
+                <h3>Valor Final:</h3>
+                <p id="Juros-Simples"></p>
+                <p id="Juros-Compostos"></p>
             </div>
         </div>
     </div>
