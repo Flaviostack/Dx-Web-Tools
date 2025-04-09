@@ -97,3 +97,44 @@
     cursor: pointer;
 }
 
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .Content-display {
+        flex-direction: column; /* Ajusta o layout para coluna em telas menores */
+        padding: 10px;
+    }
+
+    #campos-de-entrada {
+        grid-template-columns: 1fr; /* Uma única coluna em telas menores */
+        gap: 15px; /* Aumenta o espaçamento entre os campos */
+    }
+
+    #campos-de-entrada input {
+        max-width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+    }
+
+    #Calcular {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+
+    #resultado {
+        text-align: center; /* Centraliza o texto dos resultados */
+    }
+}
+
+/* Estilos para orientação horizontal */
+@media (orientation: landscape) {
+    .Content-display {
+        flex-direction: row; /* Ajusta o layout para linha em orientação horizontal */
+        justify-content: space-around;
+    }
+
+    #campos-de-entrada {
+        grid-template-columns: 1fr 1fr; /* Mantém duas colunas em paisagem */
+    }
+
+    #Calcular {
+        align-self: center; /* Centraliza o botão */
+    }
+}
+
