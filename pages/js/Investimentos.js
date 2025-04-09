@@ -18,19 +18,23 @@ function calcularInvestimento() {
 }
 
 function CalcularCDB(valorInicial, taxa, tempo, aporteMensal) {
-    // Cálculo do rendimento de um CDB
-    if (aporteMensal > 0) {
-        // Se houver aporte mensal, calcula o montante total
-        var montanteTotal = valorInicial * Math.pow((1 + (taxa / 100)), tempo) + (aporteMensal * ((Math.pow((1 + (taxa / 100)), tempo) - 1) / (taxa / 100)));
-        return {
-            jurosSimples: montanteTotal,
-            jurosCompostos: montanteTotal
-        };
-    }
+    var montanteJurosSimples = 0;
+    var montanteJurosCompostos = 0;
 
-    if (aporteMensal == 0 || isNaN(aporteMensal)) {
-        var montanteJurosSimples = valorInicial * (1 + (taxa / 100) * tempo);
-        var montanteJurosCompostos = valorInicial * Math.pow((1 + (taxa / 100)), tempo);
+    if (aporteMensal > 0) {
+        // Cálculo com aportes mensais para juros compostos
+        montanteJurosCompostos = valorInicial * Math.pow((1 + (taxa / 100)), tempo) +
+            (aporteMensal * ((Math.pow((1 + (taxa / 100)), tempo) - 1) / (taxa / 100)));
+
+        // Cálculo com aportes mensais para juros simples
+        montanteJurosSimples = valorInicial + (valorInicial * (taxa / 100) * tempo) +
+            (aporteMensal * tempo) + (aporteMensal * (tempo - 1) * (taxa / 100) / 2);
+    } else {
+        // Cálculo sem aportes para juros simples
+        montanteJurosSimples = valorInicial * (1 + (taxa / 100) * tempo);
+
+        // Cálculo sem aportes para juros compostos
+        montanteJurosCompostos = valorInicial * Math.pow((1 + (taxa / 100)), tempo);
     }
 
     // Retorna ambos os valores como um objeto
