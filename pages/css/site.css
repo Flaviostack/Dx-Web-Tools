@@ -57,7 +57,6 @@ p {
     font-size: 3rem;
     background: rgb(255,0,0);
     color:linear-gradient(60deg, rgba(255,0,0,1) 0%, rgba(158,0,109,1) 44%, rgba(46,0,230,1) 64%);
-
     -webkit-background-clip: text;
 }
    
