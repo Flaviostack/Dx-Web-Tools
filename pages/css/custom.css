@@ -102,6 +102,7 @@
     .Content-display {
         flex-direction: column; /* Ajusta o layout para coluna em telas menores */
         padding: 10px;
+        padding-top: -4rem;
     }
 
     #campos-de-entrada {

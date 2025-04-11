@@ -12,9 +12,9 @@ function calcularInvestimento() {
     // Chama a função CalcularCDB e passa todos os valores necessários
     var resultados = CalcularCDB(valorInicial, taxa, tempo, aporteMensal);
 
-    // Atualiza os elementos no HTML com os resultados
-    document.getElementById("Juros-Simples").innerText = "Juros Simples: R$ " + resultados.jurosSimples.toFixed(2);
-    document.getElementById("Juros-Compostos").innerText = "Juros Compostos: R$ " + resultados.jurosCompostos.toFixed(2);
+    // Atualiza os elementos no HTML com os resultados formatados como moeda
+    document.getElementById("Juros-Simples").innerText = "Juros Simples: " + resultados.jurosSimples.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById("Juros-Compostos").innerText = "Juros Compostos: " + resultados.jurosCompostos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
 function CalcularCDB(valorInicial, taxa, tempo, aporteMensal) {
