@@ -138,3 +138,30 @@
     }
 }
 
+#menu{
+    background: rgb(255,0,230);
+    background: linear-gradient(90deg, rgba(255,0,230,0.7525385154061625) 0%, rgba(255,0,0,0.3883928571428571) 36%, rgba(0,60,190,0.16430322128851538) 100%);
+    width: 30%;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+}
+
+#simuladordisplay a {
+    color: white;
+    font-weight: bold;
+    margin-left: 10%;
+    text-align: center;
+}
