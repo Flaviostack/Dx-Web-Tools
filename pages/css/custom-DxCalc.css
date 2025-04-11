@@ -6,3 +6,99 @@
     font-size: 1.2rem;
     margin-top: 0.5rem;
 }
+
+#titulo {
+    margin-bottom: 10px; /* Reduz a margem inferior do título */
+}
+
+#campos-de-entrada {
+    margin-top: 5px; /* Reduz a margem superior dos campos */
+}
+
+#Calcular {
+    width: 15%;
+    padding: 10px; /* Mantido o maior valor de padding */
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    grid-column: span 2; /* O botão ocupa duas colunas */
+    background: rgb(3, 3, 3);
+    background: linear-gradient(90deg, rgba(255,0,230,0.7525385154061625) 0%, rgba(255,0,0,0.3883928571428571) 36%, rgba(226, 4, 255, 0.164) 100%);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resultado {
+    text-align: center; /* Centraliza o texto dos resultados */
+}
+
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajusta o layout principal para dispositivos móveis */
+    .Content-display {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        padding: 10px;
+    }
+
+    #titulo {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+        text-align: center; /* Centraliza o título */
+    }
+
+    #campos-de-entrada {
+        grid-template-columns: 1fr; /* Uma única coluna em telas menores */
+        gap: 10px; /* Espaçamento entre os campos */
+    }
+
+    #campos-de-entrada input {
+        max-width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+        width: 100%; /* Ajusta a largura para telas menores */
+    }
+
+    #Calcular {
+        width: 100%; /* Botão ocupa toda a largura */
+        padding: 15px; /* Aumenta o padding para melhor usabilidade */
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+    }
+
+    #resultado {
+        margin-top: 20px; /* Adiciona espaçamento acima dos resultados */
+        text-align: center; /* Centraliza os resultados */
+    }
+
+    #menu {
+        width: 100%; /* O menu ocupa toda a largura */
+        margin-bottom: 15px; /* Ajusta o espaçamento inferior */
+    }
+
+    .flex-box {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        gap: 10px; /* Espaçamento entre os itens */
+    }
+
+    #simuladordisplay a {
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+        margin-left: 0; /* Remove a margem lateral */
+    }
+}
+
+/* Estilos para dispositivos muito pequenos (ex.: smartphones) */
+@media (max-width: 480px) {
+    #titulo {
+        font-size: 1.2rem; /* Reduz ainda mais o tamanho do título */
+    }
+
+    #Calcular {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte do botão */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    #campos-de-entrada input {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte dos campos */
+    }
+}
+
+
