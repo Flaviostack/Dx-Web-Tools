@@ -1,0 +1,82 @@
+/* Estilos gerais */
+#titulo {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(255, 0, 230, 0.75) 0%, rgba(255, 0, 0, 0.4) 36%, rgba(0, 60, 190, 0.16) 100%);
+}
+
+.flex-item {
+    text-align: center;
+    margin: 10px;
+}
+
+#simuladordisplay a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#simuladordisplay a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    #titulo {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    #menu {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .flex-box {
+        flex-direction: column;
+        width: 95%; /* Aumenta a largura da caixa */
+        padding: 15px;
+    }
+
+    #simuladordisplay a {
+        font-size: 1rem;
+    }
+}
+
+/* Estilos para dispositivos muito pequenos (ex.: smartphones) */
+@media (max-width: 480px) {
+    #titulo {
+        font-size: 1.5rem;
+    }
+
+    .flex-box {
+        padding: 10px;
+        width: 90%; /* Ajusta a largura para evitar que fique muito esticada */
+    }
+
+    #simuladordisplay a {
+        font-size: 0.9rem;
+    }
+}

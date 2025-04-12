@@ -29,6 +29,10 @@ a{
 .about-container a {
     color: #4CAF50; /* Cor verde para links */
     text-decoration: none; /* Remove o sublinhado */
+    word-wrap: break-word; /* Permite que o link quebre a linha */
+    word-break: break-word; /* Garante que palavras longas sejam quebradas */
+    display: inline-block; /* Garante que o link respeite o tamanho do contêiner */
+    max-width: 100%; /* Limita a largura do link ao tamanho do contêiner */
 }
 
 .about-container a:hover {
@@ -43,7 +47,7 @@ a{
 }
 
 #voltar a {
-    color: #4CAF50; /* Cor verde para o link */
+    color: #03C988; /* Cor verde para o link */
     font-size: 1.3rem; /* Ajusta o tamanho da fonte */
     text-decoration: none; /* Remove o sublinhado */
     font-weight: bold; /* Deixa o texto em negrito */
@@ -62,4 +66,56 @@ a{
     border-radius: 50%; /* Torna a imagem arredondada */
     object-fit: cover; /* Garante que a imagem se ajuste ao contêiner circular */
     border: 2px solid #4CAF50; /* Adiciona uma borda ao redor da imagem */
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .about-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-container p {
+        font-size: 1rem;
+    }
+
+    #doxo-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #voltar a {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 10px;
+    }
+
+    .about-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .about-container p {
+        font-size: 0.9rem;
+    }
+
+    .about-container a {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte para caber melhor */
+    }
+
+    #doxo-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #voltar a {
+        font-size: 1rem;
+    }
 }

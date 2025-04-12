@@ -15,6 +15,74 @@
     margin-top: 5px; /* Reduz a margem superior dos campos */
 }
 
+
+
+/* Ajuste para os campos de entrada */
+#campos-de-entrada {
+    display: grid; /* Usar grid para organizar os campos */
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanhos iguais */
+    gap: 10px; /* Espaçamento entre os campos */
+    width: 100%; /* Garantir que ocupe toda a largura disponível */
+}
+
+#campos-de-entrada input {
+    flex: 1; /* Tamanho proporcional para todos os campos */
+    min-width: 150px; /* Largura mínima para evitar campos muito pequenos */
+    max-width: 300px; /* Largura máxima para evitar campos muito grandes */
+    padding: 5px;
+    background: #00337C;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Ajuste individual para campos específicos */
+#ValorInicial {
+    flex: 2; /* Maior proporção para o valor inicial */
+}
+
+#Taxa, #Tempo, #Aportacao {
+    flex: 1; /* Proporção menor para os outros campos */
+}
+
+/* Ajuste individual para os campos */
+#ValorInicial, #Aportacao, #Taxa, #Tempo {
+    width: 100%; /* Garantir que os campos ocupem toda a largura da célula */
+    padding: 5px;
+    background: #00337C;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#resultado {
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+#Valor-final {
+    margin-top: -10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#TipoInvestimento {
+    background: #00337C;
+    color: white;
+}
+#TipoInvestimento option {
+    background: rgb(0, 0, 0);
+    font-display: swap;
+    color: rgb(255, 255, 255);
+}
+
+#Valorinicial {
+    width: 30%;
+}
+#Aportacao {
+    width: 30%;
+}
+
+
 #Calcular {
     width: 15%;
     padding: 10px; /* Mantido o maior valor de padding */
@@ -22,8 +90,7 @@
     border-style: solid;
     border-width: 1px;
     grid-column: span 2; /* O botão ocupa duas colunas */
-    background: rgb(3, 3, 3);
-    background: linear-gradient(90deg, rgba(255,0,230,0.7525385154061625) 0%, rgba(255,0,0,0.3883928571428571) 36%, rgba(226, 4, 255, 0.164) 100%);
+    background: #03C988; /* Cor de fundo do botão */
     color: white;
     font-weight: bold;
     border-radius: 5px;
@@ -32,6 +99,11 @@
 
 #resultado {
     text-align: center; /* Centraliza o texto dos resultados */
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte dos resultados */
+}
+
+#Juros-Simples, #Juros-Compostos {
+    color: #00ffaa; /* Cor verde para juros simples */
 }
 
 
@@ -99,6 +171,23 @@
     #campos-de-entrada input {
         font-size: 0.9rem; /* Ajusta o tamanho da fonte dos campos */
     }
+
+    .about-container a {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte para caber melhor */
+    }
+}
+
+.about-container a {
+    color: #4CAF50; /* Cor verde para links */
+    text-decoration: none; /* Remove o sublinhado */
+    word-wrap: break-word; /* Permite que o link quebre a linha */
+    word-break: break-word; /* Garante que palavras longas sejam quebradas */
+    display: inline-block; /* Garante que o link respeite o tamanho do contêiner */
+    max-width: 100%; /* Limita a largura do link ao tamanho do contêiner */
+}
+
+.about-container a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
 

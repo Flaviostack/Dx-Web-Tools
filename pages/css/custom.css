@@ -13,72 +13,9 @@
     align-items: center; /* Centralizar os campos verticalmente */
 }
 
-/* Ajuste para os campos de entrada */
-#campos-de-entrada {
-    display: grid; /* Usar grid para organizar os campos */
-    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanhos iguais */
-    gap: 10px; /* Espaçamento entre os campos */
-    width: 100%; /* Garantir que ocupe toda a largura disponível */
-}
-
-#campos-de-entrada input {
-    flex: 1; /* Tamanho proporcional para todos os campos */
-    min-width: 150px; /* Largura mínima para evitar campos muito pequenos */
-    max-width: 300px; /* Largura máxima para evitar campos muito grandes */
-    padding: 5px;
-    background: rgb(255,0,230);
-    background: linear-gradient(90deg, rgba(255,0,230,0.7525385154061625) 0%, rgba(255,0,0,0.3883928571428571) 36%, rgba(0,60,190,0.16430322128851538) 100%);
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Ajuste individual para campos específicos */
-#ValorInicial {
-    flex: 2; /* Maior proporção para o valor inicial */
-}
-
-#Taxa, #Tempo, #Aportacao {
-    flex: 1; /* Proporção menor para os outros campos */
-}
-
-/* Ajuste individual para os campos */
-#ValorInicial, #Aportacao, #Taxa, #Tempo {
-    width: 100%; /* Garantir que os campos ocupem toda a largura da célula */
-    padding: 5px;
-    background: rgba(255, 0, 230, 0.548);
-    background: linear-gradient(90deg, rgba(255, 0, 230, 0.438) 0%, rgba(255,0,0,0.3883928571428571) 36%, rgba(0,60,190,0.16430322128851538) 100%);
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#resultado {
-    margin-top: 2px;
-    font-weight: bold;
-}
-
-#Valor-final {
-    margin-top: -10px;
-    font-size: 20px;
-    font-weight: bold;
-}
-#TipoInvestimento {
-    background: rgb(255,0,230);
-    background: linear-gradient(90deg, rgba(255,0,230,0.7525385154061625) 0%, rgba(255,0,0,0.3883928571428571) 36%, rgba(0,60,190,0.16430322128851538) 100%);
-    color: white;
-}
-#TipoInvestimento option {
-    background: rgb(0, 0, 0);
-    font-display: swap;
-    color: rgb(255, 255, 255);
-}
-
-#Valorinicial {
-    width: 30%;
-}
-#Aportacao {
-    width: 30%;
+#redirecionar{
+    color:#03C988;
+    font-size: 1.3rem;
 }
 
 /* Ajuste para o botão calcular */
@@ -120,28 +57,24 @@
 }
 
 #menu{
-    background: rgb(255,0,230);
-    background: linear-gradient(90deg, rgba(255,0,230,0.7525385154061625) 0%, rgba(255,0,0,0.3883928571428571) 36%, rgba(0,60,190,0.16430322128851538) 100%);
+    background: #13005A;
     width: 30%;
-    color: white;
     font-weight: bold;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     margin-bottom: 20px;
 }
 
 .flex-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
+  width: 15rem;
+  border-radius: 5%;
+  background-color: #211C84;
+
+  font-style: bold;
+  text-align: center;
 }
 
 #simuladordisplay a {
-    color: white;
     font-weight: bold;
     margin-left: 10%;
     text-align: center;

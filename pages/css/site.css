@@ -23,12 +23,13 @@ html {
 
 body {
     margin-bottom: 60px;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 59, 121, 1) 24%, rgba(255, 0, 50, 1) 100%);
+    background: #13005A;
+    
 }
 
 h1 {
-    color: white;
+    color: 03C988;
+    
 }
 
 p {
@@ -55,8 +56,7 @@ p {
     text-align: center;
     font-family: 'Times New Roman', sans-serif;
     font-size: 3rem;
-    background: rgb(255,0,0);
-    color:linear-gradient(60deg, rgba(255,0,0,1) 0%, rgba(158,0,109,1) 44%, rgba(46,0,230,1) 64%);
+    background: #03C988;
     -webkit-background-clip: text;
 }
    
