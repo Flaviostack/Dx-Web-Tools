@@ -9,6 +9,7 @@
 
 #titulo {
     margin-bottom: 10px; /* Reduz a margem inferior do título */
+    color: white;
 }
 
 #campos-de-entrada {

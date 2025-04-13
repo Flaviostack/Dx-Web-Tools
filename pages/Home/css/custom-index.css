@@ -1,4 +1,5 @@
-/* Estilos gerais */
+/* Estilos da home*/
+
 #titulo {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -8,38 +9,55 @@
 
 #menu {
     display: flex;
+    width: 30%;
+    background: #13005A;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    
+    padding: 5rem;
+    gap: 1rem;
+    
     justify-content: center;
+    font-weight: bold;
     align-items: center;
     margin-top: 20px;
 }
 
+
 .flex-box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    background: #00337C;
     width: 80%;
-    padding: 10px;
+    padding: 2rem;
     border: 2px solid white;
     border-radius: 10px;
-    background: linear-gradient(90deg, rgba(255, 0, 230, 0.75) 0%, rgba(255, 0, 0, 0.4) 36%, rgba(0, 60, 190, 0.16) 100%);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .flex-item {
+    flex: 1;
     text-align: center;
-    margin: 10px;
+    color: white;
+}
+
+/*redirecionar links*/
+
+a{
+    font-size: 1.2rem;
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
 #simuladordisplay a {
-    font-size: 1.2rem;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    color: #03C988;
 }
 
-#simuladordisplay a:hover {
-    text-decoration: underline;
-}
+
 
 /* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
@@ -47,19 +65,19 @@
         font-size: 2rem;
         margin-bottom: 15px;
     }
-
+    
     #menu {
         flex-direction: column;
         width: 100%;
         margin-top: 10px;
     }
-
+    
     .flex-box {
         flex-direction: column;
         width: 95%; /* Aumenta a largura da caixa */
         padding: 15px;
     }
-
+    
     #simuladordisplay a {
         font-size: 1rem;
     }
