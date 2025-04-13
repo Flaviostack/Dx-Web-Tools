@@ -1,4 +1,4 @@
-/* Estilos da home*/
+/* Estilos da home */
 
 #titulo {
     font-size: 3rem;
@@ -13,16 +13,13 @@
     background: #13005A;
     border-radius: 50px;
     margin-bottom: 20px;
-    
     padding: 5rem;
     gap: 1rem;
-    
     justify-content: center;
     font-weight: bold;
     align-items: center;
     margin-top: 20px;
 }
-
 
 .flex-box {
     display: flex;
@@ -42,13 +39,13 @@
     color: white;
 }
 
-/*redirecionar links*/
-
-a{
+/* redirecionar links */
+a {
     font-size: 1.2rem;
     font-weight: bold; /* Deixa o texto em negrito */
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
@@ -57,27 +54,25 @@ a:hover {
     color: #03C988;
 }
 
-
-
 /* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
     #titulo {
         font-size: 2rem;
         margin-bottom: 15px;
     }
-    
+
     #menu {
         flex-direction: column;
         width: 100%;
         margin-top: 10px;
     }
-    
+
     .flex-box {
         flex-direction: column;
         width: 95%; /* Aumenta a largura da caixa */
         padding: 15px;
     }
-    
+
     #simuladordisplay a {
         font-size: 1rem;
     }
@@ -89,6 +84,11 @@ a:hover {
         font-size: 1.5rem;
     }
 
+    #menu {
+        padding: 2rem; /* Reduz o padding para telas menores */
+        gap: 0.5rem; /* Reduz o espaçamento entre os itens */
+    }
+
     .flex-box {
         padding: 10px;
         width: 90%; /* Ajusta a largura para evitar que fique muito esticada */
@@ -96,5 +96,9 @@ a:hover {
 
     #simuladordisplay a {
         font-size: 0.9rem;
+    }
+
+    .flex-item {
+        font-size: 0.9rem; /* Ajusta o tamanho do texto */
     }
 }

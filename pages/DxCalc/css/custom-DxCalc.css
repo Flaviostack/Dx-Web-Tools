@@ -108,6 +108,12 @@
 }
 
 
+#resultado {
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
     /* Ajusta o layout principal para dispositivos móveis */
