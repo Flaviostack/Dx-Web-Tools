@@ -1,0 +1,21 @@
+[pages]{
+    Index.html
+    [Home]{
+        [assets]
+        [css]
+        [js]
+    }
+    [About-Us]{
+        about.html
+        [assets]{
+            [img]
+        }
+        [css]
+    }
+    [DxCalc]{
+        DxCalc.html
+        [assets]
+        [css]
+        [js]
+    }
+}

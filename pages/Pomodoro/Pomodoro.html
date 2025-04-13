@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="../../shared/css/site.css"> <!-- Caminho atualizado -->
+    <link rel="stylesheet" href="../../shared/css/custom.css"> <!-- Caminho atualizado -->
+    <link rel="stylesheet" href="css/custom-pomodoro.css"> <!-- Caminho atualizado -->
+    <script src="js/pomodoro.js" defer></script> <!-- Caminho atualizado -->
+</head>
+<body>
+    <a href="../Index.html" id="redirecionar" title="Voltar para a página inicial">Voltar</a> <!-- Caminho atualizado -->
+    <div class="flex-container" id="menu">
+        <div class="flex-item" id="simuladordisplay">
+        </div>               
+    </div> <!-- Fechando a div com id "menu" -->
+
+    <div class="text-center" id="titulo">
+        <h1 class="display-4">Pomodoro Timer</h1>
+    </div>
+
+    <div class="flex-item">
+        <p>Tempo restante:</p>
+        <p id="timerDisplay">25:00</p> <!-- Display do timer -->
+    </div>
+
+    <div class="flex-item">
+        <p>Selecione o tempo do Pomodoro:</p>
+        <select id="selectTime" onchange="resetTimer()">
+            <option value="0.1">10 segundos</option>
+            <option value="25">25 minutos</option>
+            <option value="30">30 minutos</option>
+            <option value="45">45 minutos</option>
+        </select>
+    </div>
+
+    <div class="flex-item" id="botoes">
+        <button id="startButton" onclick="startTimer(document.getElementById('selectTime').value * 60)">Iniciar</button>
+        <button id="stopButton" onclick="stopTimer()">Parar</button>
+        <button id="resetButton" onclick="resetTimer()">Reiniciar</button>
+    </div>
+</body>
+</html>

@@ -9,6 +9,7 @@
 
 #titulo {
     margin-bottom: 10px; /* Reduz a margem inferior do título */
+    color: white;
 }
 
 #campos-de-entrada {
@@ -106,6 +107,12 @@
     color: #00ffaa; /* Cor verde para juros simples */
 }
 
+
+#resultado {
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+}
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {

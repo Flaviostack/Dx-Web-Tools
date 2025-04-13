@@ -1,4 +1,5 @@
-/* Estilos gerais */
+/* Estilos da home */
+
 #titulo {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -8,7 +9,14 @@
 
 #menu {
     display: flex;
+    width: 30%;
+    background: #13005A;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    padding: 5rem;
+    gap: 1rem;
     justify-content: center;
+    font-weight: bold;
     align-items: center;
     margin-top: 20px;
 }
@@ -16,29 +24,34 @@
 .flex-box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    background: #00337C;
     width: 80%;
-    padding: 10px;
+    padding: 2rem;
     border: 2px solid white;
     border-radius: 10px;
-    background: linear-gradient(90deg, rgba(255, 0, 230, 0.75) 0%, rgba(255, 0, 0, 0.4) 36%, rgba(0, 60, 190, 0.16) 100%);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .flex-item {
+    flex: 1;
     text-align: center;
-    margin: 10px;
+    color: white;
+}
+
+/* redirecionar links */
+a {
+    font-size: 1.2rem;
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
 #simuladordisplay a {
-    font-size: 1.2rem;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#simuladordisplay a:hover {
-    text-decoration: underline;
+    color: #03C988;
 }
 
 /* Estilos responsivos para dispositivos móveis */
@@ -71,6 +84,11 @@
         font-size: 1.5rem;
     }
 
+    #menu {
+        padding: 2rem; /* Reduz o padding para telas menores */
+        gap: 0.5rem; /* Reduz o espaçamento entre os itens */
+    }
+
     .flex-box {
         padding: 10px;
         width: 90%; /* Ajusta a largura para evitar que fique muito esticada */
@@ -78,5 +96,9 @@
 
     #simuladordisplay a {
         font-size: 0.9rem;
+    }
+
+    .flex-item {
+        font-size: 0.9rem; /* Ajusta o tamanho do texto */
     }
 }

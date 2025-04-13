@@ -7,8 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simular Investimentos</title>
-    <link rel="stylesheet" href="css/site.css"> <!-- Caminho corrigido -->
-    <link rel="stylesheet" href="css/custom.css"> <!-- Caminho corrigido -->
+    <link rel="stylesheet" href="../shared/css/site.css"> <!-- Caminho atualizado -->
+    <link rel="stylesheet" href="../shared/css/custom.css"> <!-- Caminho atualizado -->
+    <link rel="stylesheet" href="Home/css/custom-index.css"> <!-- Caminho atualizado -->
 </head>
 <body>
     <div class="text-center" id="titulo">
@@ -18,15 +19,22 @@
     <div class="flex-container" id="menu">
         <div class="flex-box">
             <div class="flex-item" id="simuladordisplay">
-                <a href="./html/DxCalc.html" id="redirecionar"
-                title="Simule o rendimento de seus investimentos com base em diferentes tipos de aplicações financeiras."                >Simulador de Investimentos</a>
-           </div>
-            
+                <a href="DxCalc/DxCalc.html" id="redirecionar"
+                title="Simule o rendimento de seus investimentos com base em diferentes tipos de aplicações financeiras.">Simulador de Investimentos</a> <!-- Caminho atualizado -->
+            </div>   
         </div>
-    </div>        
-    <div class="flex-container" id="voltar" >
-        <div class="flex-item">
-            <a href="./html/about.html" id="redirecionar" title="Sobre Nós">Sobre Nós</a> <!-- Caminho corrigido -->
-        </div>    
+
+        <div class="flex-box">
+            <div class="flex-item" id="pomodorodisplay">
+                <a href="Pomodoro/Pomodoro.html" id="redirecionar"
+                title="Timer pomodoro pra te ajudar a se concentrar.">Pomodoro Timer</a> <!-- Caminho atualizado -->
+            </div>
+        </div>        
+    </div> <!-- Fechando a div com id "menu" -->
+  
+    <div class="flex-item">
+        <a href="About-Us/about.html" id="redirecionar" title="Sobre Nós">Sobre Nós</a> <!-- Caminho atualizado -->
+    </div>    
+
 </body>
 </html>
