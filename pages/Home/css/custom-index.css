@@ -57,40 +57,44 @@ a:hover {
 /* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
     #titulo {
-        font-size: 2rem;
-        margin-bottom: 15px;
+        font-size: 2rem; /* Reduz o tamanho do título */
+        margin-bottom: 15px; /* Ajusta a margem inferior */
     }
 
     #menu {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
+        flex-direction: column; /* Alinha os itens verticalmente */
+        width: 100%; /* O menu ocupa toda a largura */
+        padding: 2rem; /* Ajusta o padding */
+        gap: 1rem; /* Espaçamento entre os itens */
     }
 
     .flex-box {
-        flex-direction: column;
-        width: 95%; /* Aumenta a largura da caixa */
-        padding: 15px;
+        flex-direction: column; /* Alinha os itens verticalmente */
+        width: 90%; /* Ajusta a largura */
+        padding: 1rem; /* Ajusta o padding */
     }
 
-    #simuladordisplay a {
-        font-size: 1rem;
+    .flex-item {
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+    }
+
+    a {
+        font-size: 1rem; /* Ajusta o tamanho da fonte dos links */
     }
 }
 
-/* Estilos para dispositivos muito pequenos (ex.: smartphones) */
 @media (max-width: 480px) {
     #titulo {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Reduz ainda mais o tamanho do título */
     }
 
     #menu {
-        padding: 2rem; /* Reduz o padding para telas menores */
+        padding: 1rem; /* Reduz o padding */
         gap: 0.5rem; /* Reduz o espaçamento entre os itens */
     }
 
     .flex-box {
-        padding: 10px;
+        padding: 0.5rem; /* Ajusta o padding */
         width: 90%; /* Ajusta a largura para evitar que fique muito esticada */
     }
 
@@ -100,5 +104,9 @@ a:hover {
 
     .flex-item {
         font-size: 0.9rem; /* Ajusta o tamanho do texto */
+    }
+
+    a {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte dos links */
     }
 }
