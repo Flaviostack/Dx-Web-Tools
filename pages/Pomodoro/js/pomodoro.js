@@ -25,10 +25,12 @@ function startTimer(duration) {
     clearInterval(timerInterval); // Garante que nenhum outro timer esteja rodando
     updateTimer(); // Chamada inicial para exibir o tempo imediatamente
     timerInterval = setInterval(updateTimer, 1000); // Atualiza o timer a cada segundo
+    document.title ="Pomodoro Timer"; // Reseta o título da aba
 }
 
 function stopTimer() {
     clearInterval(timerInterval); // Para o timer
+    document.title ="Pomodoro"; // Reseta o título da aba
 }
 
 function resetTimer() {
