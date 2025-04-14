@@ -12,11 +12,13 @@ function startTimer(duration) {
         if (remainingTime <= 0) {
             clearInterval(timerInterval);
             GetTime.innerHTML = "00:00"; // Atualiza o elemento correto
+            document.title = "Acabou!"; // Atualiza o título da aba
             alert("O tempo acabou!"); // Mensagem ao final do timer
         } else {
             let minutes = Math.floor(remainingTime / 60);
             let seconds = remainingTime % 60;
             GetTime.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.title = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`; // Atualiza o título da aba
         }
     }
 
