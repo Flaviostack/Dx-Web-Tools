@@ -1,5 +1,6 @@
 let GetTime = document.getElementById("timerDisplay"); // Elemento para exibir o tempo
 let timerInterval; // Variável para armazenar o intervalo do timer
+let icon = document.getElementById("icone"); // Elemento do ícone
 
 function startTimer(duration) {
     let startTime = Date.now();
@@ -11,14 +12,16 @@ function startTimer(duration) {
 
         if (remainingTime <= 0) {
             clearInterval(timerInterval);
-            GetTime.innerHTML = "00:00"; // Atualiza o elemento correto
-            document.title = "Acabou!"; // Atualiza o título da aba
-            alert("O tempo acabou!"); // Mensagem ao final do timer
+            GetTime.innerHTML = "00:00";
+            icon.src = "../assets/img/stoped.png"; // Caminho corrigido
+            document.title = "Acabou!";
+            alert("O tempo acabou!");
         } else {
+            icon.src = "../assets/img/clock.svg"; // Caminho corrigido
             let minutes = Math.floor(remainingTime / 60);
             let seconds = remainingTime % 60;
             GetTime.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-            document.title = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`; // Atualiza o título da aba
+            document.title = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
         }
     }
 
