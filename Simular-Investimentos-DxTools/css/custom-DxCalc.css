@@ -68,6 +68,10 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+#Diferenca{
+    font-size: small;
+}
 #TipoInvestimento {
     background: #00337C;
     color: white;
