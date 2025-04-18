@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3629363582089436"
      crossorigin="anonymous"></script>
      
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro</title>
-    <link rel="icon" href="../Pomodoro/assets/img/clock.svg" type="image/svg"> <!-- Caminho corrigido -->
+    <meta name="description" content="Pomodoro Timer - Ferramenta para ajudar na sua produtividade com sessões de foco e intervalos planejados.">
+    <meta name="keywords" content="Pomodoro Timer, Produtividade, Foco, Organização, Ferramentas de produtividade">
+    <meta name="author" content="Doxo">
+    <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="../site.css"> <!-- Caminho corrigido -->
-    <link rel="stylesheet" href="../custom.css"> <!-- Caminho corrigido -->
-    <link rel="stylesheet" href="./css/custom-pomodoro.css"> <!-- Caminho corrigido -->
-    <script src="./js/pomodoro.js" defer></script> <!-- Caminho corrigido -->
+    <title>Pomodoro Timer - Aumente sua Produtividade | DX Tools</title>
+    <link rel="icon" href="./assets/img/clock.svg" type="image/svg"> 
+
+    <link rel="stylesheet" href="../site.css"> 
+    <link rel="stylesheet" href="../custom.css"> 
+    <link rel="stylesheet" href="./css/custom-pomodoro.css"> 
+    <script src="./js/pomodoro.js" defer></script> 
+
 </head>
 <body>
-    <a href="../Index.html" id="redirecionar" title="Voltar para a página inicial">Voltar</a> <!-- Caminho corrigido -->
-    <div class="flex-container" id="menu">
-        <div class="flex-item" id="simuladordisplay">
-        </div>               
-    </div> <!-- Fechando a div com id "menu" -->
-
+    <a href="../Index.html" id="redirecionar" title="Voltar para a página inicial">Voltar</a> 
     <div class="text-center" id="titulo">
         <h1 class="display-4">Pomodoro Timer</h1>
+        <p>Gerencie seu tempo com sessões de foco e intervalos planejados.</p>
     </div>
 
     <div class="flex-item">
-        <p>Tempo restante:</p>
-        <p id="timerDisplay">25:00</p> <!-- Display do timer -->
+        <p id="timerDisplay">00:00</p> <!-- Display do timer -->
     </div>
 
     <div class="flex-item">
-        <p>Selecione o tempo do Pomodoro:</p>
-        <select id="selectTime" onchange="resetTimer()">
-            <option value="0.1">10 segundos</option>
+        <select id="selectTime" onchange="resetTimer()" title="Selecione o tempo de pomodoro">
+            <option value="0.1">5 minutos</option>
             <option value="25">25 minutos</option>
             <option value="30">30 minutos</option>
             <option value="45">45 minutos</option>
         </select>
     </div>
-
     <div class="flex-item" id="botoes">
         <button id="startButton" onclick="startTimer(document.getElementById('selectTime').value * 60)">Iniciar</button>
         <button id="stopButton" onclick="stopTimer()">Parar</button>

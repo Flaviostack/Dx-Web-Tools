@@ -2,7 +2,6 @@ p{
     text-align: center;
 }
 
-
 .flex-item{
     display: flex; /* Usando flexbox para layout */
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
