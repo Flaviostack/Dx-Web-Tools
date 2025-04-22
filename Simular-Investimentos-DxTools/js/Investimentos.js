@@ -17,7 +17,10 @@ function calcularInvestimento() {
     document.getElementById("ValorInicial").innerText = "ValorInicial: " + valorInicial.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'});
     document.getElementById("Juros-Simples").innerText = "Juros Simples: " + resultados.jurosSimples.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById("Juros-Compostos").innerText = "Juros Compostos: " + resultados.jurosCompostos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    document.getElementById("Diferenca").innerText = "obs, os juros compostos rendem" + resultados.diferenca.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' } +"a mais no período selecionado!");
+    document.getElementById("Diferenca").innerText = 
+        "|obs: os juros compostos rendem " + 
+        resultados.diferenca.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + 
+        " a mais no período selecionado!|";
 }
 
 function CalcularCDB(valorInicial, taxa, tempo, aporteMensal) {
@@ -40,7 +43,6 @@ function CalcularCDB(valorInicial, taxa, tempo, aporteMensal) {
         }
     // Cálculo da diferença entre os montantes
         diferenca = montanteJurosCompostos - montanteJurosSimples;
-        alert("Diferença: " + diferenca.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
 
     // Retorna ambos os valores como um objeto
     return {

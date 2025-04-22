@@ -1,4 +1,38 @@
+.Content-display{
+    
+    border-style: solid;
+    border-width: 1px; /* Largura da borda */
+    border-color: #03C988; /* Cor da borda */
+    
+    width: 60%;
+    height: 70%;
+    margin-top: 2rem;
+    margin-left: 20%;
 
+    display: flex; /* Usar flexbox para layout */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Alinha os itens em coluna */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #00337C; /* Cor de fundo */
+    color: white; /* Cor do texto */
+
+    
+}
+
+
+#descricao{
+    margin-top: -25rem; /* Espaçamento inferior */
+    width: 19.5%;
+
+    font-size: 1.2rem; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Cor do texto */
+
+    border-color: #03C988;
+    border-style: solid; /* Estilo da borda */
+    border-width: 1px; /* Largura da borda */
+}
 
 #voltar-link{
    font-size: 1.2rem;
@@ -61,6 +95,7 @@
 #resultado {
     margin-top: 2px;
     font-weight: bold;
+    font-size: medium;
 }
 
 #Valor-final {
@@ -122,25 +157,30 @@
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
-    /* Ajusta o layout principal para dispositivos móveis */
+    /* Ajusta o layout principal */
     .Content-display {
         flex-direction: column; /* Alinha os elementos verticalmente */
-        padding: 10px;
+        padding: 10px; /* Reduz o padding */
+        width: 90%; /* Ajusta a largura para caber melhor */
+        margin: 0 auto; /* Centraliza o conteúdo */
     }
 
     #titulo {
         font-size: 1.5rem; /* Reduz o tamanho do título */
         text-align: center; /* Centraliza o título */
+        margin-bottom: 10px; /* Ajusta o espaçamento inferior */
     }
 
     #campos-de-entrada {
         grid-template-columns: 1fr; /* Uma única coluna em telas menores */
         gap: 10px; /* Espaçamento entre os campos */
+        width: 100%; /* Garante que ocupe toda a largura disponível */
     }
 
     #campos-de-entrada input {
-        max-width: 100%; /* Garante que os campos ocupem toda a largura disponível */
-        width: 100%; /* Ajusta a largura para telas menores */
+        max-width: 100%; /* Garante que os campos ocupem toda a largura */
+        width: 100%; /* Ajusta a largura */
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
     }
 
     #Calcular {
@@ -152,6 +192,7 @@
     #resultado {
         margin-top: 20px; /* Adiciona espaçamento acima dos resultados */
         text-align: center; /* Centraliza os resultados */
+        font-size: 1.2rem; /* Ajusta o tamanho da fonte */
     }
 
     #menu {
@@ -168,12 +209,32 @@
         font-size: 1rem; /* Ajusta o tamanho da fonte */
         margin-left: 0; /* Remove a margem lateral */
     }
+
+    #descricao {
+        margin-top: 20px; /* Adiciona espaçamento acima */
+        width: 95%; /* Ajusta a largura para ocupar toda a tela */
+        text-align: center; /* Centraliza o texto */
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+        padding: 10px; /* Adiciona padding para melhor espaçamento */
+        order: 2; /* Move o #descricao para depois do display dos cálculos */
+    }
+
+    .Content-display {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        width: 100%; /* Ajusta a largura */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .Content-display-investimentos {
+        order: 1; /* Garante que o display dos cálculos fique antes */
+    }
 }
 
 /* Estilos para dispositivos muito pequenos (ex.: smartphones) */
 @media (max-width: 480px) {
     #titulo {
         font-size: 1.2rem; /* Reduz ainda mais o tamanho do título */
+        margin-bottom: 5px; /* Ajusta o espaçamento inferior */
     }
 
     #Calcular {
@@ -185,11 +246,21 @@
         font-size: 0.9rem; /* Ajusta o tamanho da fonte dos campos */
     }
 
+    #resultado {
+        font-size: 1rem; /* Ajusta o tamanho da fonte dos resultados */
+    }
+
     .about-container a {
         font-size: 0.9rem; /* Reduz o tamanho da fonte para caber melhor */
     }
+
+    .Content-display {
+        width: 95%; /* Ajusta a largura para telas muito pequenas */
+        padding: 10px; /* Reduz o padding */
+    }
 }
 
+/* Ajustes gerais para links */
 .about-container a {
     color: #4CAF50; /* Cor verde para links */
     text-decoration: none; /* Remove o sublinhado */
