@@ -2,6 +2,28 @@ p{
     text-align: center;
 }
 
+.flex-box{
+    display: flex; /* Usando flexbox para layout */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    flex-direction: column; /* Alinha os itens em coluna */
+    margin: 0 auto; /* Centraliza o item na página */
+    hyphens: auto;
+
+    width: 45%;
+
+}
+
+#descricao{
+    
+    margin-top: 3rem;
+
+    border-style: solid;
+    border-color: #1C82AD;
+    border-width: 1px;
+    border-radius: 1%;
+}
+
 .flex-item{
     display: flex; /* Usando flexbox para layout */
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
@@ -9,6 +31,15 @@ p{
     flex-direction: column; /* Alinha os itens em coluna */
     margin: 0 auto; /* Centraliza o item na página */
 }
+
+.display-4{
+    font-size: 4rem; /* Tamanho da fonte do temporizador */
+    color: #ffffff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    
+    margin: 1.25rem; /* Margem acima e abaixo do temporizador */
+}
+
 #timerDisplay{
     background-color: #4D55CC;
     border-width: 0.1rem;
@@ -105,4 +136,40 @@ button{
 }
 #resetButton:active {
     background-color: #220031; /* Cor de fundo ao clicar */
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    .flex-box {
+        width: 90%; /* Ajusta a largura para caber melhor em telas menores */
+        padding: 1rem; /* Adiciona padding */
+        margin: 0 auto; /* Centraliza o conteúdo */
+    }
+    #botoes{
+        width: 80%;
+        display: flex; /* Usando flexbox para layout */
+    }
+
+    #descricao {
+        width: 100%; /* Ajusta a largura para ocupar toda a tela */
+        margin-top: 1rem; /* Reduz o espaçamento superior */
+        padding: 1rem; /* Adiciona padding para melhor espaçamento */
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+        border-radius: 5px; /* Ajusta o arredondamento */
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    #descricao {
+        width: 80%; /* Ajusta a largura para ocupar toda a tela */
+        font-size: 0.9rem; /* Reduz ainda mais o tamanho da fonte */
+        padding: 0.8rem; /* Ajusta o padding */
+    
+    }
+
+    #timerDisplay {
+        font-size: 2.5rem; /* Reduz o tamanho da fonte do temporizador */
+    }
 }

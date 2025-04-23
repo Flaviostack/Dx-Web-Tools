@@ -1,4 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Remove o overflow horizontal */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo de largura */
+    width: 100%; /* Garante que o body não ultrapasse a largura da tela */
+}
 /* Estilos da home */
+
 h2{
     font-size: 2rem;
     margin-bottom: 20px;
@@ -7,11 +15,18 @@ h2{
 }
 
 #titulo {
+
+    font-size: 1.5rem;
     margin-top: -2rem;
-    font-size: 3rem;
     margin-bottom: 20px;
-    text-align: center;
+    margin-left: -65rem;
     color: white;
+}
+
+#sobre-nos{
+    text-align: center;
+    margin-top: -4.5rem;
+    margin-right: -70rem;;
 }
 
 #menu {
@@ -56,9 +71,10 @@ a {
 /* Adicione isso ao seu arquivo CSS */
 
 #descricao {
+    margin-top: 3rem;
     margin-bottom: -0,75rem;
     margin-left: 20%;
-    width: 60%;
+    width: 50%;
     background-color: #211c844d;
     border-radius: 10px;
     border: 1px solid white;
@@ -87,42 +103,83 @@ a:hover {
     color: #03C988;
 }
 
+/* Remove o overflow horizontal */
+
 /* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
+
+    body {
+        margin: 0; /* Remove margens padrão */
+        padding: 0; /* Remove padding padrão */
+        overflow-x: hidden; /* Esconde o overflow horizontal */
+    }
+
     #titulo {
-        font-size: 2rem; /* Reduz o tamanho do título */
-        margin-bottom: 15px; /* Ajusta a margem inferior */
+        margin-left: -8rem;
+        font-size: 1.2rem; /* Ajusta o tamanho do título */
+        margin-bottom: 10px; /* Reduz a margem inferior */
+        text-align: center; /* Centraliza o título */
     }
 
     #descricao {
-        width: 90%; /* Ajusta a largura para caber melhor em telas menores */
+        width: 90%; /* Ajusta a largura para telas menores */
+        max-width: 90%; /* Garante que a largura não ultrapasse 90% */
         margin: 0 auto; /* Centraliza horizontalmente */
-        padding: 1rem; /* Reduz o padding */
+        padding: 1rem; /* Ajusta o padding */
         font-size: 1rem; /* Ajusta o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
+        box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
     }
 
     #menu {
         flex-direction: column; /* Alinha os itens verticalmente */
-        width: 100%; /* O menu ocupa toda a largura */
-        padding: 1.5rem; /* Ajusta o padding */
+        width: 80%; /* Ajusta a largura para caber melhor */
+        padding: 1rem; /* Ajusta o padding */
         gap: 1rem; /* Espaçamento entre os itens */
+        margin: 0 auto; /* Centraliza o menu */
     }
 
     .flex-box {
         flex-direction: column; /* Alinha os itens verticalmente */
         width: 100%; /* Ajusta a largura */
         padding: 1rem; /* Ajusta o padding */
+        gap: 10px; /* Espaçamento entre os itens */
     }
 
     .flex-item {
         font-size: 1rem; /* Ajusta o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
     }
 
     a {
         font-size: 1rem; /* Ajusta o tamanho da fonte dos links */
+        word-wrap: break-word; /* Permite quebra de linha em links longos */
+    }
+
+   
+
+    #sobre-nos {
+        text-align: center; /* Centraliza o link "Sobre Nós" */
+
+        margin-top: -5rem; /* Adiciona espaçamento superior */
+    
+    }
+
+    #redirecionar {
+        font-size: 1rem; /* Ajusta o tamanho do texto */
+
+    }
+
+    #cabecalho {
+        display: flex;
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        padding: 10px; /* Adiciona padding ao cabeçalho */
+        gap: 10px; /* Espaçamento entre o título e o link */
     }
 }
 
+/* Estilos para dispositivos muito pequenos */
 @media (max-width: 480px) {
     #titulo {
         font-size: 1.5rem; /* Reduz ainda mais o tamanho do título */
@@ -136,13 +193,13 @@ a:hover {
     }
 
     #menu {
-        padding: 1rem; /* Reduz o padding */
+        padding: 0.8rem; /* Reduz o padding */
         gap: 0.5rem; /* Reduz o espaçamento entre os itens */
     }
 
     .flex-box {
         padding: 0.5rem; /* Ajusta o padding */
-        width: 100%; /* Ajusta a largura para evitar que fique muito esticada */
+        width: 100%; /* Ajusta a largura para evitar overflow */
     }
 
     #simuladordisplay a {
@@ -160,5 +217,14 @@ a:hover {
     #rodape {
         font-size: 0.8rem; /* Reduz o tamanho do texto no rodapé */
         text-align: center; /* Centraliza o texto */
+    }
+
+    #sobre-nos {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    #cabecalho {
+        padding: 5px; /* Reduz o padding para telas muito pequenas */
+        gap: 5px; /* Reduz o espaçamento entre os itens */
     }
 }
