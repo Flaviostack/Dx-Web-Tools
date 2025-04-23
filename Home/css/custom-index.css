@@ -160,9 +160,8 @@ a:hover {
 
     #sobre-nos {
         text-align: center; /* Centraliza o link "Sobre Nós" */
-
         margin-top: -5rem; /* Adiciona espaçamento superior */
-    
+        
     }
 
     #redirecionar {
@@ -176,6 +175,12 @@ a:hover {
         align-items: center; /* Centraliza os itens horizontalmente */
         padding: 10px; /* Adiciona padding ao cabeçalho */
         gap: 10px; /* Espaçamento entre o título e o link */
+    }
+
+    #sobre-nos {
+        text-align: center; /* Centraliza o link "Sobre Nós" */
+        margin: 10px auto; /* Adiciona espaçamento superior e centraliza horizontalmente */
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
     }
 }
 
@@ -226,5 +231,11 @@ a:hover {
     #cabecalho {
         padding: 5px; /* Reduz o padding para telas muito pequenas */
         gap: 5px; /* Reduz o espaçamento entre os itens */
+    }
+
+    #sobre-nos {
+        text-align: center; /* Centraliza o link "Sobre Nós" */
+        margin: 10px auto; /* Adiciona espaçamento superior e centraliza horizontalmente */
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte para telas menores */
     }
 }
