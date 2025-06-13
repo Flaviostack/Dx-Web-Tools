@@ -22,11 +22,10 @@
 
 
 #descricao{
-    margin-top: -25rem; /* Espaçamento inferior */
-    width: 19.5%;
-
+    margin-top: 5px;
+    width: 60%;
     font-size: 1.2rem; /* Tamanho da fonte */
-    text-align: center; /* Centraliza o texto */
+    text-align: justify; /* Centraliza o texto */
     color: white; /* Cor do texto */
 
     border-color: #03C988;
