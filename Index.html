@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./custom.css"> 
     <link rel="stylesheet" href="./Home/css/custom-index.css"> 
 </head>
+
 <body>
     
     <div id="cabecalho">
@@ -84,6 +85,40 @@
         <p>Desenvolvido por Doxo — Versão 1.0.0</p>
         <p>Contato: <a href="mailto:FlavioAugusto10714@gmail.com" id="email">FlavioAugusto10714@gmail.com</a></p>
     </div>
+
+    <div id="cookie-banner" class="cookie-banner">
+    <p>
+        Utilizamos cookies para melhorar sua experiência, exibir anúncios personalizados e analisar o tráfego.
+        Ao continuar navegando, você concorda com nossa
+        <a href="./Politics/privacity.html" target="_blank">Política de Privacidade</a>.
+    </p>
+
+    <button id="accept-cookies">Aceitar</button>
+</div>
+   
+<script>
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptButton = document.getElementById("accept-cookies");
+
+    if (localStorage.getItem("cookiesAccepted")) {
+        cookieBanner.style.display = "none";
+    }
+
+    acceptButton.addEventListener("click", () => {
+        localStorage.setItem("cookiesAccepted", "true");
+        cookieBanner.style.display = "none";
+    });
+</script>
+<script>
+if (localStorage.getItem("cookiesAccepted")) {
+    const ads = document.createElement("script");
+    ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    ads.async = true;
+    ads.crossOrigin = "anonymous";
+    document.head.appendChild(ads);
+}
+</script>
+
 
 </body>
 </html>

@@ -39,12 +39,24 @@ a{
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
-/* Estilo para o botão Voltar */
 #voltar {
-    position: absolute; /* Posiciona o botão de forma absoluta */
-    top: 20px; /* Distância do topo */
-    left: 20px; /* Distância da esquerda */
+    display: flex;
+    justify-content: space-between; /* um à esquerda, outro à direita */
+    align-items: center;
+
+    max-width: 900px; /* mesmo limite visual do conteúdo */
+    margin: 20px auto; /* centraliza o bloco */
+    padding: 0 10px;
 }
+
+
+.policy-link {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* Estilo para o botão Voltar */
+
 
 #voltar a {
     color: #03C988; /* Cor verde para o link */
