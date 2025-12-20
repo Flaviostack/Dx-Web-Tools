@@ -9,6 +9,10 @@ function startTimer(duration) {
     let startTime = Date.now();
     let endTime = startTime + duration * 1000;
     startAudio.play(); // Toca o áudio de início
+    wait (200).then(() => {
+        startAudio.pause();
+        startAudio.currentTime = 0;
+    });
 
     function updateTimer() {
         let now = Date.now();
