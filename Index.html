@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!--
+        Arquivo: Index.html
+        Propósito: Página inicial do site DX Tools. Contém links para as ferramentas,
+        referências a folhas de estilo e metadados importantes. Comentários adicionados
+        para facilitar leitura e futuras edições.
+    -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3629363582089436"
      crossorigin="anonymous"></script>
 
+    <!-- Metadados básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DX Tools - Ferramentas úteis como simulador de investimentos e timer pomodoro para aumentar sua produtividade e organização.">
@@ -12,55 +19,74 @@
     <meta name="robots" content="index, follow">
 
     <title>DX Tools - Ferramentas para Produtividade e Organização</title>
+    <!-- Favicon -->
     <link rel="icon" href="./Home/assets/img/home.svg" type="image/svg"> 
-    
+
+    <!-- Folhas de estilo: ordem importa (site.css = base, custom.css = sobrescritas) -->
     <link rel="stylesheet" href="./site.css"> 
     <link rel="stylesheet" href="./custom.css"> 
     <link rel="stylesheet" href="./Home/css/custom-index.css"> 
 </head>
 <body>
     
+    <!-- Cabeçalho do site: título e link para a página "Sobre Nós" -->
     <div id="cabecalho">
         <div id="titulo">
             <h1 title="Ferramentas para facilitar sua vida e aumentar sua produtividade.">DX Tools</h1>
         </div>
 
         <div id="sobre-nos">
+            <!-- Link para a página About-Us -->
             <a href="./About-Us/Index.html" id="redirecionar" title="Sobre Nós">Sobre Nós</a> 
         </div>
         <hr>
     </div>
 
 
+    <!-- Descrição breve do site (visível na página inicial) -->
     <div id="descricao">
         <p>Dx Tools é um site que oferece ferramentas úteis para ajudar você a aumentar sua produtividade e organização. Com nosso simulador de investimentos, você pode calcular o rendimento de suas aplicações financeiras e tomar decisões mais informadas. Além disso, nosso timer pomodoro é uma ferramenta eficaz para melhorar sua concentração e foco.</p>
     </div>
 
-    <h2 class="text-center" id="titulo-menu">Ferramentas:</h2>
+    <h2 class="text-center" id="subtitulo">Ferramentas:</h2>
 
-    <h3  id="titulo-menu">Estudos</h3>
-    <div class="flex-container" id="menu">
-        <div class="flex-box">
-            <div class="flex-item" id="simuladordisplay">
-                <a href="./Simular-Investimentos-DxTools/Index.html" id="redirecionar"
-                title="Simule o rendimento de seus investimentos com base em diferentes tipos de aplicações financeiras.">Simulador de Investimentos</a> 
-            </div>   
-        </div>
-
-
-        <div class="flex-box">
-            <div class="flex-item" id="pomodorodisplay">
-                <a href="./PomodoroTimer-DxTools/Index.html" id="redirecionar"
-                title="Timer pomodoro pra te ajudar a se concentrar.">Pomodoro Timer</a> 
+    <!-- Container principal que agrupa todas as ferramentas -->
+    <div class="main-container">
+        <!-- PRIMEIRO GRUPO: Estudos -->
+        <h3 id="titulo-menu">Estudos</h3>
+        <div class="flex-container" id="menu-estudos">
+            <div class="flex-box">
+                <div class="flex-item" id="pomodorodisplay">
+                    <!-- Link para o timer pomodoro -->
+                    <img src="./Home/assets/img/clock-icon.svg" alt="Ícone de timer" width="50" height="50">
+                    <a href="./PomodoroTimer-DxTools/Index.html" id="redirecionar"
+                    title="Timer pomodoro pra te ajudar a se concentrar.">Pomodoro Timer</a> 
+                </div>
             </div>
-        </div>        
-    </div> <!-- Fechando a div com id "menu" -->
+            <!-- Adicionar mais itens de estudos aqui futuramente -->
+        </div> <!-- Fechando a div com id "menu-estudos" -->
+
+        <!-- SEGUNDO GRUPO: Cálculos e conversões -->
+        <h3 id="titulo-calculos">Cálculos e conversões</h3>
+        <div class="flex-container" id="menu-calculos"> <!-- Corrigi o ID aqui -->
+            <div class="flex-box">
+                <div class="flex-item" id="simuladordisplay">
+                    <!-- Link para o simulador de investimentos -->
+                    <img src="./Home/assets/img/money_pig.svg" alt="Ícone de investimento" width="50" height="50">
+                    <a href="./Simular-Investimentos-DxTools/Index.html" id="redirecionar"
+                    title="Simule o rendimento de seus investimentos com base em diferentes tipos de aplicações financeiras.">Simulador de Investimentos</a> 
+                </div>   
+            </div>
+            <!-- Adicionar mais itens de cálculos aqui futuramente -->
+        </div> <!-- Fechando a div com id "menu-calculos" -->
+    </div> <!-- Fechando o main-container -->
     
    
+    <!-- Rodapé: informações de autoria e contato -->
     <div class="text-center" id="rodape">
         <p>Desenvolvido por Doxo</p>
         <p>Versão 1.0.0</p>
-        <p>Contato: <a href="mailto:"id="email" >FlavioAugusto10714@gmail.com</a></p>
+        <p>Contato: <a href="mailto:FlavioAugusto10714@gmail.com" id="email">FlavioAugusto10714@gmail.com</a></p>
     </div>
 
 </body>

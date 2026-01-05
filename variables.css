@@ -1,0 +1,57 @@
+:root {
+    /* Backgrounds */
+    --bg-primary: #EFECE3;
+    --bg-secondary: #E2DFD6;
+    --bg-tertiary: #D5D1C6;
+    --bg-contrast: #212121;
+
+    /* Components */
+    --component-primary: #8FABD4;
+    --component-secondary: #accdff;
+    --component-tertiary: #4A70A9;
+    --component-contrast: #FFD166;
+
+    /* Text */
+    --text-primary: #212121;
+    --text-secondary: #5A5A5A;
+    --text-tertiary: #8A8A8A;
+    --text-contrast: #FFFFFF;
+    --text-link: #1C4D8D;
+
+}
+
+[data-theme="dark"] {
+    /* Backgrounds */
+    --bg-primary: #121212;
+    --bg-secondary: #1E1E1E;
+    --bg-tertiary: #2B2B2B;
+    --bg-contrast: #8FABD4;
+
+    /* Components */
+    --component-primary: #2D3A5D;
+    --component-secondary: #3A4A75;
+    --component-tertiary: #1E2A47;
+    --component-contrast: #FFD166;
+
+    /* Text */
+    --text-primary: #E7E7E7;
+    --text-secondary: #B0B0B0;
+    --text-tertiary: #808080;
+    --text-contrast: #121212;
+}
+
+:root {
+    /* Layout */
+    --container-padding: 1rem;
+    --content-max-width: 1200px;
+
+    /* Typography scale */
+    --h1-size: clamp(1.8rem, 6vw, 3rem);
+    --h2-size: clamp(1.4rem, 4.5vw, 2.2rem);
+    --p-size: clamp(0.95rem, 3.5vw, 1.05rem);
+
+    /* Spacing */
+    --gap-sm: 0.5rem;
+    --gap-md: 1rem;
+    --gap-lg: 2rem;
+}

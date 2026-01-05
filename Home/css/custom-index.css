@@ -1,52 +1,133 @@
+@import "variables.css";
+
+/* ==========================================================================
+   ESTILOS GERAIS
+   ========================================================================== */
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Remove o overflow horizontal */
-    box-sizing: border-box; /* Inclui padding e bordas no cálculo de largura */
-    width: 100%; /* Garante que o body não ultrapasse a largura da tela */
-}
-/* Estilos da home */
-
-h2{
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: white;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
 }
 
-#titulo {
+/* ==========================================================================
+   ESTILOS POR ID (Organizados alfabeticamente)
+   ========================================================================== */
 
-    font-size: 1.5rem;
-    margin-top: -2rem;
-    margin-bottom: 20px;
-    margin-left: -65rem;
-    color: white;
+/* Cabeçalho e navegação */
+#cabecalho {
+    /* Estilos serão adicionados por media queries */
 }
 
-#sobre-nos{
-    text-align: center;
-    margin-top: -4.5rem;
-    margin-right: -70rem;;
+#descricao {
+    margin-top: 3rem;
+    margin-bottom: -0.75rem;
+    margin-left: 20%;
+    width: 50%;
+    background-color: #211c844d;
+    border-radius: 10px;
+    border: 1px solid white;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
+#email {
+    color: #03C988;
+}
+
+/* Menu principal (mantido para compatibilidade) */
 #menu {
     display: flex;
-    width: 30%;
-    background: #13005A;
+    width: 15%;
+    background: var(--component-primary);
     margin-bottom: 20px;
-    padding: 5rem;
+    padding: 4rem;
     gap: 1rem;
     justify-content: center;
     font-weight: bold;
     align-items: center;
-    margin-top: -2rem;
-    border-radius: 50px;
+    margin-top: 1rem;
+    border-radius: 10px;
 }
 
+/* Menus específicos - estilos compartilhados */
+#menu,
+#menu-estudos,
+#menu-calculos {
+    display: flex;
+    background: var(--component-primary);
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* Específicos para cada menu */
+#menu {
+    width: 30%;
+    padding: 4rem;
+    margin-bottom: 20px;
+}
+
+#menu-estudos {
+    width: 100%; /* Dentro do main-container */
+    padding: 2rem;
+    margin-bottom: 20px;
+}
+
+#menu-calculos {
+    width: 100%; /* Dentro do main-container */
+    padding: 2rem;
+    margin-bottom: 20px;
+}
+
+#sobre-nos {
+    text-align: center;
+    margin-top: -4.5rem;
+    margin-right: -70rem;
+}
+
+/* Títulos das categorias */
+#titulo {
+    font-size: 1.5rem;
+    margin-top: -2rem;
+    margin-bottom: 20px;
+    margin-left: -65rem;
+}
+
+#titulo-menu,
+#titulo-calculos {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* ==========================================================================
+   CLASSES E ELEMENTOS
+   ========================================================================== */
+
+/* Container principal */
+.main-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem auto;
+    align-items: center;
+}
+
+/* Componentes flex */
 .flex-box {
     display: flex;
     flex-direction: row;
-    background: #00337C;
+    background: var(--component-secondary);
     width: 80%;
     padding: 2rem;
     border: 2px solid white;
@@ -61,181 +142,208 @@ h2{
     color: white;
 }
 
-/* redirecionar links */
+/* Links gerais */
 a {
     font-size: 0.8rem;
-    font-weight: bold; /* Deixa o texto em negrito */
+    font-weight: bold;
     text-decoration: none;
 }
 
-/* Adicione isso ao seu arquivo CSS */
-
-#descricao {
-    margin-top: 3rem;
-    margin-bottom: -0,75rem;
-    margin-left: 20%;
-    width: 50%;
-    background-color: #211c844d;
-    border-radius: 10px;
-    border: 1px solid white;
-    
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-
-    font-size: 1.2rem; /* Tamanho da fonte */
-    word-wrap: break-word; /* Compatível com navegadores mais antigos */
-    overflow-wrap: break-word;
-    hyphens: auto; /* Hifeniza palavras longas */
-    
-}
-
-#email{
-    color: #03C988;
-}
-
-
 a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    text-decoration: underline;
 }
 
-#simuladordisplay a {
-    color: #03C988;
+/* Links específicos dos menus */
+#redirecionar-pomodoro,
+#redirecionar-simulador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    gap: 0.5rem;
 }
 
-/* Remove o overflow horizontal */
+/* Imagens dentro dos links */
+#redirecionar-pomodoro img,
+#redirecionar-simulador img {
+    margin-bottom: 0.5rem;
+}
 
-/* Estilos responsivos para dispositivos móveis */
-@media (max-width: 768px) {
+/* ==========================================================================
+   MEDIA QUERIES (Mobile First Approach)
+   ========================================================================== */
 
-    body {
-        margin: 0; /* Remove margens padrão */
-        padding: 0; /* Remove padding padrão */
-        overflow-x: hidden; /* Esconde o overflow horizontal */
-    }
-
-    #titulo {
-        margin-left: -8rem;
-        font-size: 1.2rem; /* Ajusta o tamanho do título */
-        margin-bottom: 10px; /* Reduz a margem inferior */
-        text-align: center; /* Centraliza o título */
-    }
-
+/* Dispositivos médios (tablets) */
+@media (max-width: 1024px) {
     #descricao {
-        width: 90%; /* Ajusta a largura para telas menores */
-        max-width: 90%; /* Garante que a largura não ultrapasse 90% */
-        margin: 0 auto; /* Centraliza horizontalmente */
-        padding: 1rem; /* Ajusta o padding */
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
-        text-align: center; /* Centraliza o texto */
-        box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+        width: 70%;
+        margin-left: 15%;
     }
-
-    #menu {
-        flex-direction: column; /* Alinha os itens verticalmente */
-        width: 80%; /* Ajusta a largura para caber melhor */
-        padding: 1rem; /* Ajusta o padding */
-        gap: 1rem; /* Espaçamento entre os itens */
-        margin: 0 auto; /* Centraliza o menu */
+    
+    .main-container {
+        width: 50%;
     }
+}
 
-    .flex-box {
-        flex-direction: column; /* Alinha os itens verticalmente */
-        width: 100%; /* Ajusta a largura */
-        padding: 1rem; /* Ajusta o padding */
-        gap: 10px; /* Espaçamento entre os itens */
+/* Dispositivos pequenos (mobile) */
+@media (max-width: 768px) {
+    /* Reset e base */
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
-
-    .flex-item {
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
-        text-align: center; /* Centraliza o texto */
-    }
-
-    a {
-        font-size: 1rem; /* Ajusta o tamanho da fonte dos links */
-        word-wrap: break-word; /* Permite quebra de linha em links longos */
-    }
-
-   
-
-    #sobre-nos {
-        text-align: center; /* Centraliza o link "Sobre Nós" */
-        margin-top: -5rem; /* Adiciona espaçamento superior */
-        
-    }
-
-    #redirecionar {
-        font-size: 1rem; /* Ajusta o tamanho do texto */
-
-    }
-
+    
+    /* Cabeçalho */
     #cabecalho {
         display: flex;
-        flex-direction: column; /* Alinha os itens verticalmente */
-        align-items: center; /* Centraliza os itens horizontalmente */
-        padding: 10px; /* Adiciona padding ao cabeçalho */
-        gap: 10px; /* Espaçamento entre o título e o link */
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
     }
-
+    
+    #titulo {
+        margin-left: -8rem;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-top: 0;
+    }
+    
     #sobre-nos {
-        text-align: center; /* Centraliza o link "Sobre Nós" */
-        margin: 10px auto; /* Adiciona espaçamento superior e centraliza horizontalmente */
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
+        text-align: center;
+        margin: 10px auto;
+        font-size: 1rem;
+        margin-top: -5rem;
+        margin-right: 0;
+    }
+    
+    /* Conteúdo principal */
+    #descricao {
+        width: 90%;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 1rem;
+        font-size: 1rem;
+        text-align: center;
+        box-sizing: border-box;
+        margin-top: 1.5rem;
+    }
+    
+    /* Menus */
+    #menu,
+    #menu-estudos,
+    #menu-calculos {
+        flex-direction: column;
+        width: 30%;
+        padding: 1rem;
+        gap: 1rem;
+        margin: 0 auto;
+    }
+    
+    /* Container principal */
+    .main-container {
+        width: 80%;
+        margin: 1rem auto;
+    }
+    
+    /* Componentes flex */
+    .flex-box {
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+        gap: 10px;
+    }
+    
+    .flex-item {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    /* Links */
+    a,
+    #redirecionar {
+        font-size: 1rem;
+        word-wrap: break-word;
+    }
+    
+    /* Rodapé específico para mobile */
+    #rodape {
+        font-size: 0.9rem;
+        text-align: center;
     }
 }
 
-/* Estilos para dispositivos muito pequenos */
+/* Dispositivos muito pequenos */
 @media (max-width: 480px) {
     #titulo {
-        font-size: 1.5rem; /* Reduz ainda mais o tamanho do título */
-        margin-bottom: 10px; /* Ajusta a margem inferior */
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        margin-left: 0;
     }
-
+    
     #descricao {
-        width: 95%; /* Ajusta a largura para telas muito pequenas */
-        padding: 0.8rem; /* Reduz o padding */
-        font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+        width: 95%;
+        padding: 0.8rem;
+        font-size: 0.9rem;
     }
-
-    #menu {
-        padding: 0.8rem; /* Reduz o padding */
-        gap: 0.5rem; /* Reduz o espaçamento entre os itens */
+    
+    #menu,
+    #menu-estudos,
+    #menu-calculos {
+        padding: 0.8rem;
+        gap: 0.5rem;
     }
-
-    .flex-box {
-        padding: 0.5rem; /* Ajusta o padding */
-        width: 100%; /* Ajusta a largura para evitar overflow */
+    
+    #sobre-nos {
+        font-size: 0.9rem;
+        text-align: center;
+        margin: 10px auto;
+        margin-top: 0;
     }
-
+    
+    #cabecalho {
+        padding: 5px;
+        gap: 5px;
+    }
+    
+    #rodape {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    
     #simuladordisplay a {
         font-size: 0.9rem;
     }
-
+    
+    .main-container {
+        width: 90%;
+    }
+    
+    .flex-box {
+        padding: 0.5rem;
+        width: 100%;
+    }
+    
     .flex-item {
-        font-size: 0.9rem; /* Ajusta o tamanho do texto */
+        font-size: 0.9rem;
     }
-
+    
     a {
-        font-size: 0.8rem; /* Ajusta o tamanho da fonte dos links */
+        font-size: 0.8rem;
     }
+}
 
-    #rodape {
-        font-size: 0.8rem; /* Reduz o tamanho do texto no rodapé */
-        text-align: center; /* Centraliza o texto */
+/* Dispositivos grandes (desktop) */
+@media (min-width: 1200px) {
+    #descricao {
+        width: 60%;
+        margin-left: 20%;
     }
-
-    #sobre-nos {
-        font-size: 0.9rem; /* Ajusta o tamanho da fonte para telas menores */
-    }
-
-    #cabecalho {
-        padding: 5px; /* Reduz o padding para telas muito pequenas */
-        gap: 5px; /* Reduz o espaçamento entre os itens */
-    }
-
-    #sobre-nos {
-        text-align: center; /* Centraliza o link "Sobre Nós" */
-        margin: 10px auto; /* Adiciona espaçamento superior e centraliza horizontalmente */
-        font-size: 0.9rem; /* Ajusta o tamanho da fonte para telas menores */
+    
+    .main-container {
+        width: 40%;
     }
 }

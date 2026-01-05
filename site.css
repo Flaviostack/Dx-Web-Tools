@@ -1,5 +1,10 @@
+@import "variables.css";
+
+/* Regras gerais do documento */
 html {
     font-size: 16px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -8,43 +13,18 @@ html {
     }
 }
 
-.btn:focus, 
-.btn:active:focus, 
-.btn-link.nav-link:focus, 
-.form-control:focus, 
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
 body {
     margin-bottom: 60px;
-    background: #13005A;
-    
+    background: var(--bg-primary);
 }
 
+/* Estilos tipográficos */
 h1 {
-    color: 03C988;
-    
+    color: var(--text-primary);
 }
 
 p {
-    color: white;
-}
-
-.form-floating > .form-control-plaintext::placeholder, 
-.form-floating > .form-control::placeholder {
-    color: var(--bs-secondary-color);
-    text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, 
-.form-floating > .form-control:focus::placeholder {
-    text-align: start;
+    color: var(--text-primary);
 }
 
 .display-4 {
@@ -59,8 +39,41 @@ p {
     background: #03C988;
     -webkit-background-clip: text;
 }
-   
-   
+
+#subtitulo {
+    text-align: center;
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+#titulo-menu {
+    text-align: left;
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+
+/* Estilos de foco */
+.btn:focus, 
+.btn:active:focus, 
+.btn-link.nav-link:focus, 
+.form-control:focus, 
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Estilos de formulário */
+.form-floating > .form-control-plaintext::placeholder, 
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, 
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* Layout e componentes */
 .Content-display {
     margin-top: -20px;
     display: flex;
@@ -74,11 +87,8 @@ p {
     flex-direction: column;
 }
 
-
 #campos-de-entrada input {
     margin-bottom: 10px;
     padding: 5px;
     width: 100%;
 }
-
-
