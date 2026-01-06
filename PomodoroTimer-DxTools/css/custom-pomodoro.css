@@ -1,175 +1,364 @@
-p{
-    text-align: center;
+@import "variables.css";
+
+/* ===== RESET E ESTILOS GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.flex-box{
-    display: flex; /* Usando flexbox para layout */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    flex-direction: column; /* Alinha os itens em coluna */
-    margin: 0 auto; /* Centraliza o item na página */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+p {
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* ===== CLASSES UTILITÁRIAS ===== */
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
     hyphens: auto;
-
     width: 45%;
-
 }
 
-#descricao{
-    
+.flex-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.display-4 {
+    font-size: 4rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 1.25rem;
+}
+
+/* ===== COMPONENTES ===== */
+#containerTimer {
+    background-color: var(--component-primary);
+    border-radius: 5%;
+    border: 0.1rem solid var(--bg-contrast);
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+#timerDisplay {
+    background-color: var(--component-secondary);
+    border: 0.1rem solid var(--bg-contrast);
+    border-radius: 5%;
+    font-size: 5rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 1.25rem;
+    padding: 0.5rem;
+}
+
+#selectTime {
+    background-color: var(--component-secondary);
+    border: 1px solid var(--bg-contrast);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+#botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+/* ===== SEÇÃO DESCRIÇÃO (POMODORO) ===== */
+#descricao {
+    width: 60%;
     margin-top: 3rem;
-
-    border-style: solid;
-    border-color: #1C82AD;
-    border-width: 1px;
-    border-radius: 1%;
+    border: 1px solid var(--bg-contrast);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 2rem;
+    line-height: 1.6;
 }
 
-.flex-item{
-    display: flex; /* Usando flexbox para layout */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    flex-direction: column; /* Alinha os itens em coluna */
-    margin: 0 auto; /* Centraliza o item na página */
+/* Títulos dentro da descrição */
+#descricao h1 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
 
-.display-4{
-    font-size: 4rem; /* Tamanho da fonte do temporizador */
-    color: #ffffff; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    
-    margin: 1.25rem; /* Margem acima e abaixo do temporizador */
+#descricao .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-#timerDisplay{
-    background-color: #4D55CC;
-    border-width: 0.1rem;
-    border-color: #4CAF50;
-    border-style: solid;
-    border-radius: 10%;
-    
-    font-size: 5rem; /* Tamanho da fonte do temporizador */
-    color: #ffffff; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    
-    margin: 1.25rem; /* Margem acima e abaixo do temporizador */
+#descricao h2 {
+    color: var(--component-tertiary);
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--bg-tertiary);
 }
 
-#selectTime{
-    background-color: #1C82AD;
-    font-size: 1.5rem; /* Tamanho da fonte do temporizador */
-    color: #ffffff; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    
-    margin: 1.25rem; /* Margem acima e abaixo do temporizador */
+#descricao h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
 }
 
-
-#botoes{
-    display: flex; /* Usando flexbox para layout */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    flex-direction: row; /* Alinha os itens em linha */
-    margin: 0 auto; /* Centraliza o item na página */
-    
+/* Parágrafos dentro da descrição */
+#descricao p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    color: var(--text-primary);
 }
 
-button{
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
+/* Componentes específicos da descrição */
+#descricao .pomodoro-cycle {
+    background-color: var(--bg-tertiary);
+    border-left: 4px solid var(--component-tertiary);
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+#descricao .highlight {
+    background-color: rgba(231, 178, 86, 0.1); /* Usando component-contrast com transparência */
+    border-left: 4px solid var(--component-contrast);
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+/* Listas dentro da descrição */
+#descricao ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#descricao li {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+/* Tags de profissionais */
+#descricao .professionals-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+#descricao .profession-tag {
+    background-color: rgba(143, 171, 212, 0.2); /* Usando component-primary com transparência */
+    color: var(--component-tertiary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--component-primary);
+}
+
+/* ===== BOTÕES ===== */
+button {
+    background-color: var(--component-tertiary);
+    border: 0.1rem solid var(--bg-contrast);
+    color: var(--text-contrast);
+    padding: 0.75rem 1.5rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 1rem;
+    margin: 0.25rem;
     cursor: pointer;
-
-    border-radius: 10%;
-    border-color: #2A004E;
-    border-style: solid;
-    border-width: 0.1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-#stopButton{
-    background-color: #F14A00; /* Red */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#stopButton:hover{
-    background-color: #ff0000; /* Cor de fundo ao passar o mouse */
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#stopButton:active {
-    background-color: #521616; /* Cor de fundo ao clicar */
+/* Botão Start */
+#startButton {
+    background-color: var(--component-tertiary);
 }
 
-#startButton:hover{
-    background-color: #3e8e41; /* Cor de fundo ao passar o mouse */
-}
-#startButton:active {
-    background-color: #1c421d; /* Cor de fundo ao clicar */
+#startButton:hover {
+    background-color: #1c421d;
 }
 
-#resetButton{
-    background-color: #500073; /* Blue */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-#resetButton:hover{
-    background-color: #8c02c7; /* Cor de fundo ao passar o mouse */
-}
-#resetButton:active {
-    background-color: #220031; /* Cor de fundo ao clicar */
+/* Botão Stop */
+#stopButton {
+    background-color: var(--component-contrast);
 }
 
-/* Estilos responsivos para dispositivos móveis */
+#stopButton:hover {
+    background-color: #c94a00;
+}
+
+/* Botão Reset */
+#resetButton {
+    background-color: #500073;
+}
+
+#resetButton:hover {
+    background-color: #6a0099;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+    .flex-box {
+        width: 70%;
+    }
+    
+    #descricao {
+        width: 80%;
+    }
+}
+
 @media (max-width: 768px) {
     .flex-box {
-        width: 90%; /* Ajusta a largura para caber melhor em telas menores */
-        padding: 1rem; /* Adiciona padding */
-        margin: 0 auto; /* Centraliza o conteúdo */
+        width: 90%;
+        padding: 1rem;
     }
-    #botoes{
-        width: 80%;
-        display: flex; /* Usando flexbox para layout */
+    
+    #botoes {
+        width: 100%;
+        flex-wrap: wrap;
     }
-
+    
     #descricao {
-        width: 100%; /* Ajusta a largura para ocupar toda a tela */
-        margin-top: 1rem; /* Reduz o espaçamento superior */
-        padding: 1rem; /* Adiciona padding para melhor espaçamento */
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
-        border-radius: 5px; /* Ajusta o arredondamento */
+        width: 95%;
+        margin-top: 1.5rem;
+        padding: 1.25rem;
+        border-radius: 6px;
     }
-
-
+    
+    #descricao h1 {
+        font-size: 2rem;
+    }
+    
+    #descricao .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    #timerDisplay {
+        font-size: 3.5rem;
+    }
+    
+    #selectTime {
+        font-size: 1.25rem;
+    }
+    
+    button {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    #descricao .professionals-list {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
-    #descricao {
-        width: 80%; /* Ajusta a largura para ocupar toda a tela */
-        font-size: 0.9rem; /* Reduz ainda mais o tamanho da fonte */
-        padding: 0.8rem; /* Ajusta o padding */
-    
+    .display-4 {
+        font-size: 2.5rem;
     }
-
+    
+    #descricao {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    #descricao h1 {
+        font-size: 1.75rem;
+    }
+    
+    #descricao .subtitle {
+        font-size: 1rem;
+    }
+    
+    #descricao h2 {
+        font-size: 1.25rem;
+    }
+    
     #timerDisplay {
-        font-size: 2.5rem; /* Reduz o tamanho da fonte do temporizador */
+        font-size: 2.5rem;
+        margin: 0.75rem;
+        padding: 0.25rem;
+    }
+    
+    #selectTime {
+        font-size: 1rem;
+        margin: 0.75rem;
+        padding: 0.25rem;
+    }
+    
+    #botoes {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+    
+    #descricao .professionals-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #descricao .profession-tag {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 320px) {
+    #descricao {
+        padding: 0.75rem;
+    }
+    
+    #descricao h1 {
+        font-size: 1.5rem;
+    }
+    
+    #timerDisplay {
+        font-size: 2rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
     }
 }
