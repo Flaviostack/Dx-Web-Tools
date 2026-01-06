@@ -1,276 +1,333 @@
-.Content-display{
-    
-    border-style: solid;
-    border-width: 1px; /* Largura da borda */
-    border-color: #03C988; /* Cor da borda */
-    
+@import "variables.css";
+
+/* ===== COMPONENTE PRINCIPAL ===== */
+.Content-display {
+    border: 1px solid var(--component-contrast); /* Usando component-contrast para a borda */
     width: 60%;
     height: 70%;
     margin-top: 2rem;
     margin-left: 20%;
-
-    display: flex; /* Usar flexbox para layout */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    flex-direction: column; /* Alinha os itens em coluna */
-    padding: 20px; /* Espaçamento interno */
-    background-color: #00337C; /* Cor de fundo */
-    color: white; /* Cor do texto */
-
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--component-tertiary); /* Usando component-tertiary para o fundo */
+    color: var(--text-contrast); /* Usando text-contrast para o texto */
+    border-radius: 8px;
 }
 
-
-#descricao{
+/* ===== SEÇÃO DESCRIÇÃO ===== */
+#descricao {
     margin-top: 5px;
     width: 60%;
-    font-size: 1.2rem; /* Tamanho da fonte */
-    text-align: justify; /* Centraliza o texto */
-    color: white; /* Cor do texto */
-
-    border-color: #03C988;
-    border-style: solid; /* Estilo da borda */
-    border-width: 1px; /* Largura da borda */
+    font-size: 1.2rem;
+    text-align: justify;
+    color: var(--text-contrast);
+    border: 1px solid var(--component-contrast);
+    padding: 15px;
+    background-color: var(--component-tertiary);
+    border-radius: 6px;
 }
 
-#voltar-link{
-   font-size: 1.2rem;
-    color: white;
+/* ===== LINKS E TÍTULOS ===== */
+#voltar-link {
+    font-size: 1.2rem;
+    color: var(--text-contrast);
+    text-decoration: none;
 }
-#pagina-simulador{
+
+#voltar-link:hover {
+    color: var(--component-secondary);
+    text-decoration: underline;
+}
+
+#pagina-simulador {
     font-size: 1.2rem;
     margin-top: 0.5rem;
+    color: var(--text-contrast);
 }
 
 #titulo {
-    margin-bottom: 10px; /* Reduz a margem inferior do título */
-    color: white;
+    margin-bottom: 10px;
+    color: var(--text-contrast);
+    font-size: 2rem;
+    text-align: center;
 }
 
+/* ===== CAMPOS DE ENTRADA ===== */
 #campos-de-entrada {
-    margin-top: 5px; /* Reduz a margem superior dos campos */
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
 }
 
-
-
-/* Ajuste para os campos de entrada */
-#campos-de-entrada {
-    display: grid; /* Usar grid para organizar os campos */
-    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanhos iguais */
-    gap: 10px; /* Espaçamento entre os campos */
-    width: 100%; /* Garantir que ocupe toda a largura disponível */
-}
-
-#campos-de-entrada input {
-    flex: 1; /* Tamanho proporcional para todos os campos */
-    min-width: 150px; /* Largura mínima para evitar campos muito pequenos */
-    max-width: 300px; /* Largura máxima para evitar campos muito grandes */
-    padding: 5px;
-    background: #00337C;
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Ajuste individual para campos específicos */
-#ValorInicial {
-    flex: 2; /* Maior proporção para o valor inicial */
-}
-
-#Taxa, #Tempo, #Aportacao {
-    flex: 1; /* Proporção menor para os outros campos */
-}
-
-/* Ajuste individual para os campos */
-#ValorInicial, #Aportacao, #Taxa, #Tempo {
-    width: 100%; /* Garantir que os campos ocupem toda a largura da célula */
-    padding: 5px;
-    background: #00337C;
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#resultado {
-    margin-top: 2px;
-    font-weight: bold;
-    font-size: medium;
-}
-
-#Valor-final {
-    margin-top: -10px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#Diferenca{
-    font-size: small;
-}
+/* Campos de entrada gerais */
+#campos-de-entrada input,
 #TipoInvestimento {
-    background: #00337C;
-    color: white;
-}
-#TipoInvestimento option {
-    background: rgb(0, 0, 0);
-    font-display: swap;
-    color: rgb(255, 255, 255);
+    flex: 1;
+    min-width: 150px;
+    max-width: 300px;
+    padding: 8px 10px;
+    background-color: var(--component-primary);
+    color: var(--text-contrast);
+    border: 1px solid var(--bg-contrast);
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-#Valorinicial {
-    width: 30%;
+/* Ajustes específicos para campos */
+#ValorInicial,
+#Aportacao,
+#Taxa,
+#Tempo {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: var(--component-primary);
+    color: var(--text-contrast);
+    border: 1px solid var(--bg-contrast);
+    border-radius: 5px;
 }
+
+#ValorInicial {
+    flex: 2;
+}
+
+/* Placeholder styling */
+#campos-de-entrada input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Select box styling */
+#TipoInvestimento {
+    background-color: var(--component-primary);
+    color: var(--text-contrast);
+    cursor: pointer;
+}
+
+#TipoInvestimento option {
+    background-color: var(--bg-contrast);
+    color: var(--text-contrast);
+}
+
+/* Ajustes de largura específicos */
+#Valorinicial,
 #Aportacao {
     width: 30%;
 }
 
-
+/* ===== BOTÃO CALCULAR ===== */
 #Calcular {
     width: 15%;
-    padding: 10px; /* Mantido o maior valor de padding */
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    grid-column: span 2; /* O botão ocupa duas colunas */
-    background: #03C988; /* Cor de fundo do botão */
-    color: white;
+    padding: 12px;
+    border: 1px solid var(--bg-contrast);
+    background-color: var(--component-contrast);
+    color: var(--text-primary);
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    grid-column: span 2;
+    font-size: 1rem;
 }
 
+#Calcular:hover {
+    background-color: var(--component-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#Calcular:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== RESULTADOS ===== */
 #resultado {
-    text-align: center; /* Centraliza o texto dos resultados */
-    font-size: 1.5rem; /* Aumenta o tamanho da fonte dos resultados */
-}
-
-#Juros-Simples, #Juros-Compostos {
-    color: #00ffaa; /* Cor verde para juros simples */
-}
-
-
-#resultado {
-    color: white;
     margin-top: 20px;
     font-weight: bold;
+    text-align: center;
+    color: var(--text-contrast);
+    font-size: 1.5rem;
 }
 
-/* Estilos para dispositivos móveis */
-@media (max-width: 768px) {
-    /* Ajusta o layout principal */
-    .Content-display {
-        flex-direction: column; /* Alinha os elementos verticalmente */
-        padding: 10px; /* Reduz o padding */
-        width: 90%; /* Ajusta a largura para caber melhor */
-        margin: 0 auto; /* Centraliza o conteúdo */
-    }
-
-    #titulo {
-        font-size: 1.5rem; /* Reduz o tamanho do título */
-        text-align: center; /* Centraliza o título */
-        margin-bottom: 10px; /* Ajusta o espaçamento inferior */
-    }
-
-    #campos-de-entrada {
-        grid-template-columns: 1fr; /* Uma única coluna em telas menores */
-        gap: 10px; /* Espaçamento entre os campos */
-        width: 100%; /* Garante que ocupe toda a largura disponível */
-    }
-
-    #campos-de-entrada input {
-        max-width: 100%; /* Garante que os campos ocupem toda a largura */
-        width: 100%; /* Ajusta a largura */
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
-    }
-
-    #Calcular {
-        width: 100%; /* Botão ocupa toda a largura */
-        padding: 15px; /* Aumenta o padding para melhor usabilidade */
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
-    }
-
-    #resultado {
-        margin-top: 20px; /* Adiciona espaçamento acima dos resultados */
-        text-align: center; /* Centraliza os resultados */
-        font-size: 1.2rem; /* Ajusta o tamanho da fonte */
-    }
-
-    #menu {
-        width: 100%; /* O menu ocupa toda a largura */
-        margin-bottom: 15px; /* Ajusta o espaçamento inferior */
-    }
-
-    .flex-box {
-        flex-direction: column; /* Alinha os itens verticalmente */
-        gap: 10px; /* Espaçamento entre os itens */
-    }
-
-    #simuladordisplay a {
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
-        margin-left: 0; /* Remove a margem lateral */
-    }
-
-    #descricao {
-        margin-top: 20px; /* Adiciona espaçamento acima */
-        width: 95%; /* Ajusta a largura para ocupar toda a tela */
-        text-align: center; /* Centraliza o texto */
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
-        padding: 10px; /* Adiciona padding para melhor espaçamento */
-        order: 2; /* Move o #descricao para depois do display dos cálculos */
-    }
-
-    .Content-display {
-        flex-direction: column; /* Alinha os itens verticalmente */
-        width: 100%; /* Ajusta a largura */
-        padding: 10px; /* Reduz o padding */
-    }
-
-    .Content-display-investimentos {
-        order: 1; /* Garante que o display dos cálculos fique antes */
-    }
+#Valor-final {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--component-contrast);
 }
 
-/* Estilos para dispositivos muito pequenos (ex.: smartphones) */
-@media (max-width: 480px) {
-    #titulo {
-        font-size: 1.2rem; /* Reduz ainda mais o tamanho do título */
-        margin-bottom: 5px; /* Ajusta o espaçamento inferior */
-    }
-
-    #Calcular {
-        font-size: 0.9rem; /* Ajusta o tamanho da fonte do botão */
-        padding: 10px; /* Reduz o padding */
-    }
-
-    #campos-de-entrada input {
-        font-size: 0.9rem; /* Ajusta o tamanho da fonte dos campos */
-    }
-
-    #resultado {
-        font-size: 1rem; /* Ajusta o tamanho da fonte dos resultados */
-    }
-
-    .about-container a {
-        font-size: 0.9rem; /* Reduz o tamanho da fonte para caber melhor */
-    }
-
-    .Content-display {
-        width: 95%; /* Ajusta a largura para telas muito pequenas */
-        padding: 10px; /* Reduz o padding */
-    }
+#Diferenca {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
 }
 
-/* Ajustes gerais para links */
+/* Cores específicas para tipos de juros */
+#Juros-Simples,
+#Juros-Compostos {
+    color: var(--component-secondary);
+}
+
+/* ===== CONTAINER ABOUT ===== */
 .about-container a {
-    color: #4CAF50; /* Cor verde para links */
-    text-decoration: none; /* Remove o sublinhado */
-    word-wrap: break-word; /* Permite que o link quebre a linha */
-    word-break: break-word; /* Garante que palavras longas sejam quebradas */
-    display: inline-block; /* Garante que o link respeite o tamanho do contêiner */
-    max-width: 100%; /* Limita a largura do link ao tamanho do contêiner */
+    color: var(--component-contrast);
+    text-decoration: none;
+    word-wrap: break-word;
+    word-break: break-word;
+    display: inline-block;
+    max-width: 100%;
+    transition: color 0.3s ease;
 }
 
 .about-container a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    color: var(--component-secondary);
+    text-decoration: underline;
 }
 
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+    .Content-display {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    #descricao {
+        width: 80%;
+    }
+    
+    #Calcular {
+        width: 25%;
+    }
+}
 
+@media (max-width: 768px) {
+    .Content-display {
+        flex-direction: column;
+        padding: 15px;
+        width: 90%;
+        margin: 2rem auto;
+        margin-left: auto;
+        height: auto;
+    }
+
+    #titulo {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    #campos-de-entrada {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+    }
+
+    #campos-de-entrada input,
+    #TipoInvestimento {
+        max-width: 100%;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    #Calcular {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1rem;
+        grid-column: 1;
+    }
+
+    #resultado {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    #descricao {
+        margin-top: 20px;
+        width: 95%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .Content-display-investimentos {
+        order: 1;
+    }
+
+    #Valorinicial,
+    #Aportacao {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #titulo {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    #Calcular {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    #campos-de-entrada input,
+    #TipoInvestimento {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+
+    #resultado {
+        font-size: 1.1rem;
+    }
+
+    #Valor-final {
+        font-size: 1.3rem;
+    }
+
+    .Content-display {
+        width: 95%;
+        padding: 12px;
+        margin-top: 1.5rem;
+    }
+
+    #descricao {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .about-container a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .Content-display {
+        padding: 10px;
+    }
+    
+    #titulo {
+        font-size: 1.1rem;
+    }
+    
+    #Calcular {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    #resultado {
+        font-size: 1rem;
+    }
+}
+
+/* ===== ESTADOS DE FOCO PARA ACESSIBILIDADE ===== */
+#campos-de-entrada input:focus,
+#TipoInvestimento:focus,
+#Calcular:focus {
+    outline: 2px solid var(--component-contrast);
+    outline-offset: 2px;
+}
