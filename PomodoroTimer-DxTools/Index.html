@@ -1,52 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Scripts de publicidade -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3629363582089436"
      crossorigin="anonymous"></script>
      
+    <!-- Meta tags básicas -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta tags para SEO -->
     <meta name="description" content="Pomodoro Timer - Ferramenta para ajudar na sua produtividade com sessões de foco e intervalos planejados.">
     <meta name="keywords" content="Pomodoro Timer, Produtividade, Foco, Organização, Ferramentas de produtividade">
     <meta name="author" content="Doxo">
     <meta name="robots" content="index, follow">
 
+    <!-- Título da página -->
     <title>Pomodoro Timer - Aumente sua Produtividade | DX Tools</title>
+    
+    <!-- Ícone da página -->
     <link rel="icon" href="./assets/img/clock.svg" type="image/svg"> 
 
+    <!-- Folhas de estilo -->
     <link rel="stylesheet" href="../site.css"> 
     <link rel="stylesheet" href="../custom.css"> 
     <link rel="stylesheet" href="./css/custom-pomodoro.css"> 
+    
+    <!-- Scripts JavaScript -->
     <script src="./js/pomodoro.js" defer></script> 
-
 </head>
+
 <body>
+    <!-- Link de navegação para voltar à página inicial -->
     <a href="../Index.html" id="redirecionar" title="Voltar para a página inicial">Voltar</a> 
+    
+    <!-- Título principal da página -->
     <div class="text-center" id="titulo">
-        <h1 class="display-4">Pomodoro Timer</h1>
+        <h1 class="display-4">DX Focus</h1>
     </div>
 
-    <div class="flex-item">
-        <p id="timerDisplay">00:00</p> <!-- Display do timer -->
-    </div>
+<div class="flex-box" id="containerTimer">
+    
+        <!-- Display do timer -->
+        <div class="flex-item">
+            <p id="timerDisplay">00:00</p>
+        </div>
+    
+        <!-- Seletor de tempo para o pomodoro -->
+        <div class="flex-item">
+            <select id="selectTime" onchange="resetTimer()" title="Selecione o tempo de pomodoro">
+                <option value="5">5 minutos</option>
+                <option value="25">25 minutos</option>
+                <option value="30">30 minutos</option>
+                <option value="45">45 minutos</option>
+            </select>
+        </div>
+    
+        <!-- Contêiner dos botões de controle do timer -->
+        <div class="flex-item" id="botoes">
+            <button id="startButton" onclick="startTimer(document.getElementById('selectTime').value * 60)">Iniciar</button>
+            <button id="stopButton" onclick="stopTimer()">Parar</button>
+            <button id="resetButton" onclick="resetTimer()">Reiniciar</button>
+        </div>
+</div>
 
-    <div class="flex-item">
-        <select id="selectTime" onchange="resetTimer()" title="Selecione o tempo de pomodoro">
-            <option value="5">5 minutos</option>
-            <option value="25">25 minutos</option>
-            <option value="30">30 minutos</option>
-            <option value="45">45 minutos</option>
-        </select>
-    </div>
-    <div class="flex-item" id="botoes">
-        <button id="startButton" onclick="startTimer(document.getElementById('selectTime').value * 60)">Iniciar</button>
-        <button id="stopButton" onclick="stopTimer()">Parar</button>
-        <button id="resetButton" onclick="resetTimer()">Reiniciar</button>
-    </div>
-
+    <!-- Descrição/explicação do método Pomodoro -->
     <div class="flex-box" id="descricao">
-        <p>O Pomodoro Timer é uma ferramenta que ajuda a aumentar sua produtividade, permitindo que você trabalhe em sessões de foco e faça pausas planejadas. O método Pomodoro consiste em trabalhar por 25 minutos e fazer uma pausa de 5 minutos. Após quatro sessões, faça uma pausa mais longa de 15 a 30 minutos.</p>
-        <p>Essa técnica é eficaz para manter o foco e evitar a fadiga mental. Experimente e veja como sua produtividade pode aumentar!</p>
+        
+    <header>
+        <h1>Técnica Pomodoro</h1>
+        <p class="subtitle">Como funciona e para quem é útil</p>
+    </header>
+    
+    <article>
+        <p>A técnica Pomodoro é um método de gestão do tempo criado pelo italiano Francesco Cirillo no final da década de 1980. Seu objetivo principal é aumentar a produtividade e melhorar o foco por meio da divisão do trabalho em períodos curtos e organizados. O nome "pomodoro", que significa tomate em italiano, surgiu porque o criador utilizava um timer de cozinha nesse formato para controlar seus estudos.</p>
+        
+        <h2>Como funciona a técnica Pomodoro</h2>
+        
+        <p>O funcionamento da técnica Pomodoro é simples e pode ser aplicado por qualquer pessoa. Ela consiste em alternar blocos de concentração total com pequenas pausas para descanso.</p>
+        
+        <div class="pomodoro-cycle">
+            <h3>Cada ciclo é dividido da seguinte forma:</h3>
+            <ul>
+                <li>Escolha uma tarefa específica para trabalhar</li>
+                <li>Programe um cronômetro para 25 minutos (este é "um pomodoro")</li>
+                <li>Dedique-se exclusivamente à tarefa durante esse período</li>
+                <li>Ao final do pomodoro, faça uma pausa de 5 minutos</li>
+                <li>Após completar quatro pomodoros seguidos, faça uma pausa maior (15 a 30 minutos)</li>
+            </ul>
+        </div>
+        
+        <p>Essa estrutura ajuda o cérebro a manter a atenção sem entrar em exaustão mental. Como os intervalos são frequentes, o método reduz a procrastinação e torna tarefas grandes mais fáceis de começar e concluir. Além disso, a técnica Pomodoro estimula a disciplina, pois ensina a pessoa a trabalhar com prioridades claras e metas objetivas.</p>
+        
+        <h2>Para quem é útil?</h2>
+        
+        <div class="highlight">
+            <p>A técnica Pomodoro pode ser útil para quem tem dificuldade de se concentrar por longos períodos, para pessoas que lidam com muitas demandas ao mesmo tempo e para quem se sente sobrecarregado pela rotina.</p>
+        </div>
+        
+        <p>Ela é indicada especialmente para:</p>
+        <ul>
+            <li>Trabalhadores remotos e freelancers</li>
+            <li>Profissionais que precisam administrar o próprio horário</li>
+            <li>Alunos que desejam melhorar o rendimento nos estudos</li>
+            <li>Pessoas que se preparam para provas importantes</li>
+        </ul>
+        
+        <h2>Quem utiliza a técnica Pomodoro?</h2>
+        
+        <p>Muitos profissionais e estudantes utilizam a técnica Pomodoro no dia a dia. Ela é muito popular entre:</p>
+        
+        <div class="professionals-list">
+            <span class="profession-tag">Desenvolvedores</span>
+            <span class="profession-tag">Designers</span>
+            <span class="profession-tag">Escritores</span>
+            <span class="profession-tag">Concurseiros</span>
+            <span class="profession-tag">Universitários</span>
+            <span class="profession-tag">Empreendedores</span>
+        </div>
+        
+        <p>Equipes que trabalham com projetos criativos também adotam o método para organizar reuniões, estudos e atividades que exigem raciocínio contínuo. Com o avanço da tecnologia, diversos aplicativos e ferramentas digitais foram criados para facilitar o uso da técnica Pomodoro, tornando-a ainda mais acessível.</p>
+        
+        <h2>Por que experimentar?</h2>
+        
+        <p>Qualquer pessoa que queira aprender como ser mais produtivo pode se beneficiar do método. A técnica Pomodoro é flexível, fácil de implementar e não exige treinamento complexo. Basta ter um cronômetro, uma lista de tarefas e disposição para testar uma nova forma de organizar o tempo.</p>
+        
+        <p>Se você procura uma maneira prática de melhorar sua produtividade pessoal, reduzir distrações e aumentar a eficiência no trabalho ou nos estudos, experimentar a técnica Pomodoro pode ser o primeiro passo para alcançar melhores resultados.</p>
+    </article>
+    
+    <footer>
+        <p>Baseado na técnica criada por Francesco Cirillo • Adaptado para HTML</p>
+    </footer>
     </div>
+
+
+
+
+
+    
 </body>
 </html>
