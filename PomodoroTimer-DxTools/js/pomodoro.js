@@ -1,7 +1,8 @@
 let GetTime = document.getElementById("timerDisplay"); // Elemento para exibir o tempo
 let timerInterval; // Variável para armazenar o intervalo do timer
 
-let startAudio = new Audio("./assets/sound/start.mp3"); startAudio.volume = 0.5;
+let startAudio = new Audio("./assets/sound/clock-start.wav"); startAudio.volume = 0.5;
+let alarmAudio = new Audio("./assets/sound/alarm.wav"); alarmAudio.volume = 0.5;
 
 
 function startTimer(duration) {
@@ -9,7 +10,8 @@ function startTimer(duration) {
     let startTime = Date.now();
     let endTime = startTime + duration * 1000;
     startAudio.play(); // Toca o áudio de início
-
+    setTimeout(() => startAudio.pause(), 2000); // Para o áudio após 2 segundos
+   
     function updateTimer() {
         let now = Date.now();
         let remainingTime = Math.round((endTime - now) / 1000);
@@ -19,6 +21,8 @@ function startTimer(duration) {
             GetTime.innerHTML = "00:00";
             document.title = "Acabou!";
             alert("O tempo acabou!");
+            alarmAudio.play(); // Toca o áudio de alarme
+            setTimeout(() => alarmAudio.pause(), 5000); // Para o áudio após 5 segundos
         } else {
             let minutes = Math.floor(remainingTime / 60);
             let seconds = remainingTime % 60;

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3629363582089436"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3310492393241793"
      crossorigin="anonymous"></script>
      
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Simule seus investimentos com nosso simulador de aplicações financeiras. Compare juros simples e compostos e veja a diferença no rendimento.">
-    <meta name="keywords" content="simulador de investimentos, juros simples, juros compostos, aplicações financeiras, rendimento">
+    <meta name="description" content="Simule investimentos financeiros com aportes mensais, juros simples e juros compostos. Ferramenta gratuita para planejamento financeiro e educação financeira.">
+    <meta name="keywords" content="simulador de investimentos, juros simples, juros compostos, educação financeira, planejamento financeiro, aportes mensais">
     <meta name="author" content="Doxo">
-    <title>Simular Investimentos</title>
+    <title>Simulador de Investimentos Online | Dx Tools</title>
     <link id="icon" rel="icon" href="../Simular-Investimentos-DxTools/assets/img/money.svg" type="image/svg">
 
     <link rel="stylesheet" href="../site.css"> 
@@ -25,52 +25,70 @@
         </div>
     </div>
 
-<!--  Parte do cabeçalho  -->
-    <div class="text-center">
+    <!-- Cabeçalho -->
+    <header class="text-center header-box">
         <h1 id="titulo">Simulador de Investimentos</h1>
-    </div>
+        <p>Ferramenta gratuita para simular aplicações financeiras e entender o impacto dos juros ao longo do tempo.</p>
+    </header>
     
-<!--  Parte dos campos de entrada  e resultados -->
-
-<div class="Content-display">
+    <!-- Área principal -->
+    <main class="Content-display main-box">
         <div class="Content-display-investimentos">
-            <p>Selecione o tipo de investimento</p>
-            <select id="TipoInvestimento">
-                <option value="1">aplicações</option>
-            </select>
+            <section>
+                <h2>Tipo de investimento</h2>
+                <p>Escolha o tipo de aplicação financeira que deseja simular. Atualmente, o simulador considera aplicações genéricas com juros fixos.</p>
+                <select id="TipoInvestimento" aria-label="Tipo de investimento">
+                    <option value="1">Aplicações financeiras</option>
+                </select>
+            </section>
 
-            <div id="campos-de-entrada" class="flex-container">
-                <p>Valores da aplicação</p>
+            <section id="campos-de-entrada" class="flex-container">
+                <h2>Dados da aplicação</h2>
+                <p>Preencha os campos abaixo com valores aproximados para obter uma simulação realista.</p>
+
                 <div class="input-group">
-                    <input type="number" id="ValorInicial" placeholder="Valor inicial" min="0" increment="100" step="100">
-                    <input type="number" id="AporteMensal" placeholder="Aportes mensais" min="0">
+                    <input type="number" id="ValorInicial" placeholder="Valor inicial" min="0" step="100" aria-label="Valor inicial">
+                    <input type="number" id="AporteMensal" placeholder="Aportes mensais" min="0" aria-label="Aporte mensal">
                 </div>
 
-                <p>Taxa de Juros (%)</p>
+                <p>Taxa de juros mensal (%)</p>
                 <div class="input-group">
-                    <input type="number" id="Taxa" placeholder="1%" min="0.1" increment="0.1" step="0.1">
+                    <input type="number" id="Taxa" placeholder="Ex: 1%" min="0.1" step="0.1" aria-label="Taxa de juros">
                 </div>
 
-                <p>Tempo de investimento (meses)</p>
+                <p>Tempo de investimento (em meses)</p>
                 <div class="input-group">
-                    <input type="number" id="Tempo" placeholder="12" min="1">
+                    <input type="number" id="Tempo" placeholder="Ex: 12" min="1" aria-label="Tempo de investimento">
                 </div>
-            </div>
+            </section>
 
             <button id="Calcular" type="button" onclick="calcularInvestimento()" title="Calcular rendimentos">Calcular</button>
   
-            <div id="resultado">
-                <h3>Valor Final:</h3>
+            <section id="resultado" class="resultado-box">
+                <h2>Resultado da simulação</h2>
                 <p id="Juros-Simples"></p>
                 <p id="Juros-Compostos"></p>
                 <p id="Diferenca"></p>
-            </div>
+            </section>
         </div>
-    </div>
+    </main>
 
-    <div class="Content-display" id="descricao">
-        <p>O simulador de investimentos permite que você compare o rendimento de diferentes tipos de aplicações financeiras, considerando juros simples e compostos. Basta inserir os valores da aplicação, a taxa de juros e o tempo de investimento para ver a diferença no rendimento.</p>
-        <p>Use nosso simulador para tomar decisões mais informadas sobre seus investimentos e maximize seus ganhos!</p>
-    </div>
+    <!-- Conteúdo informativo -->
+    <section class="Content-display descricao-box" id="descricao">
+        <h2>Como funciona o simulador de investimentos?</h2>
+        <p>Este simulador de investimentos foi desenvolvido para fins educacionais e de planejamento financeiro. Ele permite visualizar, de forma simples, como os juros simples e os juros compostos afetam o crescimento do seu dinheiro ao longo do tempo.</p>
+
+        <p>Ao informar o valor inicial, os aportes mensais, a taxa de juros e o período de investimento, você consegue comparar diferentes cenários e entender melhor o poder dos juros compostos no longo prazo.</p>
+
+        <h3>Por que usar um simulador financeiro?</h3>
+        <p>Simuladores financeiros ajudam a tomar decisões mais conscientes, evitar erros comuns e criar hábitos financeiros mais saudáveis. Eles são amplamente utilizados em educação financeira, planejamento pessoal e estudos sobre investimentos.</p>
+
+        <h3>Aviso importante</h3>
+        <p>Os valores apresentados são apenas estimativas e não representam recomendações de investimento. Para decisões financeiras reais, considere consultar um profissional especializado.</p>
+    </section>
+
+    <footer class="text-center footer-box">
+        <p>© 2025 Dx Tools · Conteúdo educacional sobre finanças e tecnologia</p>
+    </footer>
 </body>
 </html>
