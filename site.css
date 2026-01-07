@@ -16,51 +16,19 @@ html {
 body {
     margin-bottom: 60px;
     background: var(--bg-primary);
+    font-family: ;
 }
 
 /* Estilos tipográficos */
 h1 {
-<<<<<<< HEAD
-    color: #03C988;
-    
-=======
     color: var(--text-primary);
->>>>>>> 6387a63db3656cdc3f7295805efcd6145efe41ae
 }
 h2{
     color: white;
 }
 
 p {
-<<<<<<< HEAD
-    color: white;
-}
-
-.principal-content{
-    align-items: center;
-}
-
-.primary-text{
-    color: #03C988;
-}
-.secondary-text{
-    color: #F5F5F5;
-    display: inline-block;
-    text-align: left;
-}
-
-.form-floating > .form-control-plaintext::placeholder, 
-.form-floating > .form-control::placeholder {
-    color: var(--bs-secondary-color);
-    text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, 
-.form-floating > .form-control:focus::placeholder {
-    text-align: start;
-=======
     color: var(--text-primary);
->>>>>>> 6387a63db3656cdc3f7295805efcd6145efe41ae
 }
 
 .display-4 {
@@ -87,6 +55,7 @@ p {
     font-family: 'Times New Roman', sans-serif;
     font-size: 1.5rem;
     color: var(--text-primary);
+}
 
 /* Estilos de foco */
 .btn:focus, 
@@ -127,7 +96,6 @@ p {
     margin-bottom: 10px;
     padding: 5px;
     width: 100%;
-<<<<<<< HEAD
 }
 
 .cookie-banner {
@@ -168,7 +136,3 @@ p {
 .cookie-banner button:hover {
     opacity: 0.9;
 }
-
-=======
-}
->>>>>>> 6387a63db3656cdc3f7295805efcd6145efe41ae
