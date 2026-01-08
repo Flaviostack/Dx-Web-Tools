@@ -16,7 +16,7 @@ html {
 body {
     margin-bottom: 60px;
     background: var(--bg-primary);
-    font-family: ;
+   
 }
 
 /* Estilos tipográficos */
@@ -40,8 +40,7 @@ p {
     text-align: center;
     font-family: 'Times New Roman', sans-serif;
     font-size: 3rem;
-    background: #03C988;
-    -webkit-background-clip: text;
+    background: var(--component-primary);
 }
 
 #subtitulo {
