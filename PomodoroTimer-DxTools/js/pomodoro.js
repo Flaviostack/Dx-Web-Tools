@@ -42,7 +42,9 @@ function stopTimer() {
     document.title = "Pomodoro"; // Reseta o título da aba
 }
 
-function resetTimer() {
+function resetTimer(value) {
     clearInterval(timerInterval); // Para o timer
-    GetTime.innerHTML = "25:00"; // Reseta o display para 25 minutos
+    GetTime.innerHTML = value+":00";
+    
+     // Reseta o display para 25 minutos
 }
