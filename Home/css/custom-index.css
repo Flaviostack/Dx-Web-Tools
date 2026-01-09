@@ -17,20 +17,18 @@ body {
 
 /* Cabeçalho e navegação */
 #cabecalho {
-    /* Estilos serão adicionados por media queries */
     background: var(--component-primary);
 }
 
 #content-display {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 #descricao {
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: -0.75rem;
     margin-left: 20%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -80,8 +78,7 @@ body {
     padding: 1rem;
 }
 
-#descricao .about-content {
-    margin-top: 3.5rem;
+#descricao .about-content {  
     max-width: 100%;
 }
 
@@ -279,17 +276,36 @@ a:hover {
 #redirecionar-pomodoro img,
 #redirecionar-simulador img {
     margin-bottom: 0.5rem;
+    max-width: 100%;
+    height: auto;
 }
 
 /* ==========================================================================
-   MEDIA QUERIES (Mobile First Approach)
+   MEDIA QUERIES (Mobile First Approach - CORRIGIDAS)
    ========================================================================== */
 
+/* Dispositivos grandes (desktop) */
+@media (min-width: 1200px) {
+    #descricao {
+        width: 60%;
+        margin-left: 20%;
+    }
+    
+    #descricao .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .main-container {
+        width: 40%;
+    }
+}
+
 /* Dispositivos médios (tablets) */
-@media (max-width: 1024px) {
+@media (max-width: 1199px) and (min-width: 769px) {
     #descricao {
         width: 70%;
         margin-left: 15%;
+        margin-right: 15%;
     }
     
     #descricao .feature-grid {
@@ -298,11 +314,28 @@ a:hover {
     }
     
     .main-container {
-        width: 50%;
+        width: 60%;
+    }
+    
+    #menu {
+        width: 40%;
+        padding: 3rem;
+    }
+    
+    #sobre-nos {
+        margin-right: -50rem;
+    }
+    
+    #titulo {
+        margin-left: -50rem;
+    }
+    
+    .flex-box {
+        width: 40%;
     }
 }
 
-/* Dispositivos pequenos (mobile) */
+/* Dispositivos pequenos (tablets pequenos e mobile grande) */
 @media (max-width: 768px) {
     /* Reset e base */
     body {
@@ -316,29 +349,32 @@ a:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 10px;
+        padding: 15px;
         gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     /* Descrição */
     #descricao {
         width: 90%;
         max-width: 90%;
-        margin: 0 auto;
+        margin: 1.5rem auto 0 auto;
         padding: 0;
         font-size: 1rem;
         text-align: left;
         box-sizing: border-box;
-        margin-top: 1.5rem;
         margin-left: auto;
+        margin-right: auto;
     }
     
     #descricao summary {
-        padding: 1rem;
+        padding: 0.8rem;
+        font-size: 0.9rem;
     }
     
     #descricao .about-section {
-        padding: 1rem;
+        padding: 0.8rem;
     }
     
     #descricao .feature-grid {
@@ -356,72 +392,110 @@ a:hover {
         margin-top: 1.5rem;
     }
     
+    /* Títulos ajustados */
     #titulo {
-        margin-left: -8rem;
+        margin: 0 auto 10px auto;
         font-size: 1.2rem;
-        margin-bottom: 10px;
         text-align: center;
-        margin-top: 0;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
     
     #sobre-nos {
         text-align: center;
         margin: 10px auto;
         font-size: 1rem;
-        margin-top: -5rem;
-        margin-right: 0;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
     
-    /* Menus */
+    #titulo-principal {
+        font-size: 1.3rem;
+        -webkit-text-stroke: 0.5px;
+    }
+    
+    /* Menus ajustados */
     #menu,
     #menu-estudos,
     #menu-calculos {
         flex-direction: column;
-        width: 30%;
-        padding: 1rem;
+        width: 80%;
+        padding: 1.5rem;
         gap: 1rem;
         margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+    #menu {
+        width: 70%;
+        padding: 2rem;
     }
     
     /* Container principal */
     .main-container {
-        width: 80%;
+        width: 90%;
         margin: 1rem auto;
+        padding: 0 10px;
+        box-sizing: border-box;
     }
     
     /* Componentes flex */
     .flex-box {
         flex-direction: column;
         width: 100%;
-        padding: 1rem;
-        gap: 10px;
+        padding: 1.5rem;
+        gap: 15px;
+        box-sizing: border-box;
     }
     
     .flex-item {
         font-size: 1rem;
         text-align: center;
+        width: 100%;
     }
     
     /* Links */
     a,
-    #redirecionar {
-        font-size: 1rem;
+    #redirecionar-pomodoro,
+    #redirecionar-simulador {
+        font-size: 0.9rem;
         word-wrap: break-word;
+        text-align: center;
     }
     
-    /* Rodapé específico para mobile */
-    #rodape {
-        font-size: 0.9rem;
+    /* Imagens responsivas */
+    #redirecionar-pomodoro img,
+    #redirecionar-simulador img {
+        max-width: 60px;
+        height: auto;
+    }
+    
+    /* Rodapé */
+    #rodape-info {
+        margin-top: 3rem;
+        padding: 1rem;
+        font-size: 0.8rem;
         text-align: center;
+    }
+    
+    /* Elementos de navegação */
+    #content-display {
+        margin-top: 0.5rem;
     }
 }
 
-/* Dispositivos muito pequenos */
+/* Dispositivos muito pequenos (mobile pequeno) */
 @media (max-width: 480px) {
     #titulo {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        margin-left: 0;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        padding: 0 10px;
+    }
+    
+    #titulo-principal {
+        font-size: 1.2rem;
     }
     
     #descricao {
@@ -430,11 +504,16 @@ a:hover {
     }
     
     #descricao summary {
-        padding: 0.8rem;
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+    
+    #descricao summary h2 {
+        font-size: 0.9rem;
     }
     
     #descricao .about-section {
-        padding: 0.8rem;
+        padding: 0.7rem;
     }
     
     #descricao .feature-card {
@@ -444,43 +523,48 @@ a:hover {
     #descricao .highlight-box {
         padding: 0.8rem;
         margin-top: 1rem;
+        font-size: 0.85rem;
     }
     
     #menu,
     #menu-estudos,
     #menu-calculos {
-        padding: 0.8rem;
-        gap: 0.5rem;
+        padding: 1rem;
+        gap: 0.8rem;
+        width: 90%;
+    }
+    
+    #menu {
+        width: 80%;
+        padding: 1.5rem;
     }
     
     #sobre-nos {
         font-size: 0.9rem;
-        text-align: center;
-        margin: 10px auto;
-        margin-top: 0;
+        margin: 8px auto;
+        padding: 0 10px;
     }
     
     #cabecalho {
-        padding: 5px;
-        gap: 5px;
+        padding: 10px;
+        gap: 8px;
     }
     
-    #rodape {
-        font-size: 0.8rem;
-        text-align: center;
-    }
-    
-    #simuladordisplay a {
-        font-size: 0.9rem;
+    #rodape-info {
+        font-size: 0.75rem;
+        padding: 0.8rem;
+        margin-top: 2rem;
     }
     
     .main-container {
-        width: 90%;
+        width: 95%;
+        padding: 0 5px;
     }
     
     .flex-box {
-        padding: 0.5rem;
+        padding: 1rem;
         width: 100%;
+        gap: 10px;
     }
     
     .flex-item {
@@ -490,20 +574,66 @@ a:hover {
     a {
         font-size: 0.8rem;
     }
+    
+    #redirecionar-pomodoro img,
+    #redirecionar-simulador img {
+        max-width: 50px;
+    }
+    
+    /* Ajustes para elementos de texto */
+    #email {
+        font-size: 0.85rem;
+        word-break: break-all;
+    }
+    
+    #linha-separadora {
+        margin-top: 1rem;
+    }
 }
 
-/* Dispositivos grandes (desktop) */
-@media (min-width: 1200px) {
-    #descricao {
-        width: 60%;
-        margin-left: 20%;
+/* Ajustes para orientação paisagem em mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    #menu,
+    #menu-estudos,
+    #menu-calculos {
+        flex-direction: row;
+        width: 90%;
+        padding: 1rem;
+    }
+    
+    .flex-box {
+        flex-direction: row;
+        padding: 1rem;
     }
     
     #descricao .feature-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ajustes para telas muito estreitas */
+@media (max-width: 320px) {
+    #descricao {
+        width: 98%;
+        font-size: 0.85rem;
+    }
+    
+    #titulo {
+        font-size: 1.1rem;
+    }
+    
+    #menu,
+    #menu-estudos,
+    #menu-calculos {
+        width: 95%;
+        padding: 0.8rem;
     }
     
     .main-container {
-        width: 40%;
+        width: 98%;
+    }
+    
+    a {
+        font-size: 0.75rem;
     }
 }
