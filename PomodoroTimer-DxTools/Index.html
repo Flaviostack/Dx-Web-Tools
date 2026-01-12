@@ -48,7 +48,7 @@
     
         <!-- Seletor de tempo para o pomodoro -->
         <div class="flex-item">
-            <select id="selectTime" onchange="resetTimer(value)" title="Selecione o tempo de pomodoro">
+            <select id="selectTime" title="Selecione o tempo de pomodoro">
                 <option value="5">5 minutos</option>
                 <option value="25">25 minutos</option>
                 <option value="30">30 minutos</option>
@@ -58,9 +58,9 @@
     
         <!-- Contêiner dos botões de controle do timer -->
         <div class="flex-item" id="botoes">
-            <button id="startButton" onclick="startTimer(document.getElementById('selectTime').value * 60)">Iniciar</button>
+            <button id="startButton" onclick="startTimer(getSelectedTimInSeconds())">Iniciar</button>
             <button id="stopButton" onclick="stopTimer()">Parar</button>
-            <button id="resetButton" onclick="resetTimer()">Reiniciar</button>
+            <button id="resetButton" onclick="resetTimer(getSelectedTimInSeconds())">Reiniciar</button>
         </div>
 </div>
 

@@ -1,16 +1,20 @@
-let GetTime = document.getElementById("timerDisplay"); // Elemento para exibir o tempo
-let timerInterval; // Variável para armazenar o intervalo do timer
+let GetTime = document.getElementById("timerDisplay");
+let timerInterval;
 
-let startAudio = new Audio("./assets/sound/clock-start.wav"); startAudio.volume = 0.5;
-let alarmAudio = new Audio("./assets/sound/alarm.wav"); alarmAudio.volume = 0.5;
+let startAudio = new Audio("./assets/sound/clock-start.wav");
+startAudio.volume = 0.5;
+let alarmAudio = new Audio("./assets/sound/alarm.wav");
+alarmAudio.volume = 0.5;
 
+function getSelectedTimInSeconds() {
+    return document.getElementById("selectTime").value * 60;
+}
 
 function startTimer(duration) {
-    
     let startTime = Date.now();
     let endTime = startTime + duration * 1000;
-    startAudio.play(); // Toca o áudio de início
-    setTimeout(() => startAudio.pause(), 2000); // Para o áudio após 2 segundos
+    startAudio.play();
+    setTimeout(() => startAudio.pause(), 2000);
    
     function updateTimer() {
         let now = Date.now();
@@ -21,8 +25,8 @@ function startTimer(duration) {
             GetTime.innerHTML = "00:00";
             document.title = "Acabou!";
             alert("O tempo acabou!");
-            alarmAudio.play(); // Toca o áudio de alarme
-            setTimeout(() => alarmAudio.pause(), 5000); // Para o áudio após 5 segundos
+            alarmAudio.play();
+            setTimeout(() => alarmAudio.pause(), 5000);
         } else {
             let minutes = Math.floor(remainingTime / 60);
             let seconds = remainingTime % 60;
@@ -31,20 +35,26 @@ function startTimer(duration) {
         }
     }
 
-    clearInterval(timerInterval); // Garante que nenhum outro timer esteja rodando
-    updateTimer(); // Chamada inicial para exibir o tempo imediatamente
-    timerInterval = setInterval(updateTimer, 1000); // Atualiza o timer a cada segundo
-    document.title = "Pomodoro Timer"; // Reseta o título da aba
+    clearInterval(timerInterval);
+    updateTimer();
+    timerInterval = setInterval(updateTimer, 1000);
+    document.title = "Pomodoro Timer";
 }
 
 function stopTimer() {
-    clearInterval(timerInterval); // Para o timer
-    document.title = "Pomodoro"; // Reseta o título da aba
+    clearInterval(timerInterval);
+    document.title = "Pomodoro";
 }
 
 function resetTimer(value) {
-    clearInterval(timerInterval); // Para o timer
-    GetTime.innerHTML = value+":00";
+    clearInterval(timerInterval);
     
-     // Reseta o display para 25 minutos
+    // Se não receber valor, pega do select
+    let timeInSeconds = value || getSelectedTimInSeconds();
+    
+    let minutes = Math.floor(timeInSeconds / 60);
+    let seconds = timeInSeconds % 60;
+    GetTime.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+    document.title = "Pomodoro Timer";
 }
