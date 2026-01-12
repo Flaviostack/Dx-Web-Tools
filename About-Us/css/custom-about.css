@@ -1,5 +1,7 @@
+@import "variables.css";
+
+
 a{
-    color: #f1f1f1;
     font-size: 1.3rem;
 }
 
@@ -9,7 +11,7 @@ a{
     padding: 20px; /* Adiciona espaçamento interno */
     color: #f1f1f1; /* Cor clara para contraste com o fundo */
     font-family: Arial, sans-serif; /* Fonte legível */
-    background-color: #dd00fa13; /* Fundo escuro para contraste */
+    background-color: var(--component-primary); /* Fundo escuro para contraste */
     border-radius: 10px; /* Bordas arredondadas */
     max-width: 800px; /* Limita a largura do texto */
     margin: 20px auto; /* Centraliza horizontalmente */
@@ -27,7 +29,7 @@ a{
 }
 
 .about-container a {
-    color: #4CAF50; /* Cor verde para links */
+    color: var(--text-link); /* Cor verde para links */
     text-decoration: none; /* Remove o sublinhado */
     word-wrap: break-word; /* Permite que o link quebre a linha */
     word-break: break-word; /* Garante que palavras longas sejam quebradas */
@@ -59,7 +61,7 @@ a{
 
 
 #voltar a {
-    color: #03C988; /* Cor verde para o link */
+    color: var(--text-link); /* Cor verde para o link */
     font-size: 1.3rem; /* Ajusta o tamanho da fonte */
     text-decoration: none; /* Remove o sublinhado */
     font-weight: bold; /* Deixa o texto em negrito */
