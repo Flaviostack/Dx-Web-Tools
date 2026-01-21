@@ -151,7 +151,7 @@ header {
     max-width: 300px;
     padding: 0.5rem 0.625rem;
     background-color: var(--component-primary);
-    color: var(--text-contrast);
+    color: var(--text-secondary);
     border: 1px solid var(--bg-contrast);
     border-radius: 5px;
     font-size: var(--p-size);
@@ -167,7 +167,7 @@ header {
 /* Select específico */
 #TipoInvestimento {
     background-color: var(--component-primary);
-    color: var(--text-contrast);
+    color: var(--text-primary);
     cursor: pointer;
     appearance: none;
 }

@@ -5,6 +5,10 @@ let startAudio = new Audio("./assets/sound/clock-start.wav");
 startAudio.volume = 0.5;
 let alarmAudio = new Audio("./assets/sound/alarm.wav");
 alarmAudio.volume = 0.5;
+let btnClickAudio = new Audio("./assets/sound/click_1.mp3"); btnClickAudio.volume = 0.5;
+let btnClickAudio2 = new Audio("./assets/sound/click_2.mp3"); btnClickAudio2.volume = 0.5;
+
+
 
 function getSelectedTimInSeconds() {
     return document.getElementById("selectTime").value * 60;
@@ -24,7 +28,6 @@ function startTimer(duration) {
             clearInterval(timerInterval);
             GetTime.innerHTML = "00:00";
             document.title = "Acabou!";
-            alert("O tempo acabou!");
             alarmAudio.play();
             setTimeout(() => alarmAudio.pause(), 5000);
         } else {
@@ -44,10 +47,12 @@ function startTimer(duration) {
 function stopTimer() {
     clearInterval(timerInterval);
     document.title = "Pomodoro";
+    btnClickAudio2.play();
 }
 
 function resetTimer(value) {
     clearInterval(timerInterval);
+    btnClickAudio.play();
     
     // Se não receber valor, pega do select
     let timeInSeconds = value || getSelectedTimInSeconds();
