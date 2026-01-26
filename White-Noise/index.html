@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Ruído Branco</title>
+    <!-- Folhas de estilo -->
+    <link rel="stylesheet" href="../site.css"> 
+    <link rel="stylesheet" href="WN-custom.css"> 
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🔊 Gerador de Ruído Branco</h1>
+        
+        <div class="card">
+            <div class="input-group">
+                <label for="volume" class="input-label">Volume: <span id="volume-value" class="value-display">50%</span></label>
+                <input type="range" id="volume" class="slider" min="0" max="100" value="50">
+            </div>
+            
+            <div class="input-group">
+                <label for="filter" class="input-label">Filtro (Hz): <span id="filter-value" class="value-display">1000</span></label>
+                <input type="range" id="filter" class="slider" min="20" max="5000" value="1000">
+            </div>
+            
+            <div class="button-group flex-row">
+                <button id="toggle-btn" class="btn btn-primary">▶️ Iniciar</button>
+                <button id="stop-btn" class="btn btn-secondary">⏹️ Parar</button>
+                <button id="rain-btn" class="btn btn-accent">🌧️ Chuva</button>
+                <button id="fan-btn" class="btn btn-accent">🌀 Ventilador</button>
+                <button id="reset-btn" class="btn btn-outline">🔄 Resetar</button>
+            </div>
+            
+            <div class="visualizer-container">
+                <canvas id="visualizer" class="visualizer-canvas"></canvas>
+            </div>
+            
+            <div class="presets-section">
+                <h3 class="subtitle">Predefinições:</h3>
+                <div class="preset-buttons">
+                    <button class="preset-btn" data-volume="30" data-filter="100">Sono Profundo</button>
+                    <button class="preset-btn" data-volume="40" data-filter="2000">Foco Intenso</button>
+                    <button class="preset-btn" data-volume="35" data-filter="500">Relaxamento</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-text">
+            <p>O ruído branco ajuda a mascarar sons distrativos e pode melhorar o foco e o sono.</p>
+        </div>
+    </div>
+    
+    <script src="noise.js"></script>
+
+       <!-- Descrição/explicação do Ruído Branco -->
+    <div class="flex-box" id="descricao">
+        
+    <header>
+        <h1>Ruído Branco</h1>
+        <p class="subtitle">Como funciona e para quem é útil</p>
+    </header>
+    
+    <article>
+        <p>O ruído branco é um tipo de som que contém todas as frequências audíveis em igual intensidade, criando um som constante e uniforme que mascara outros ruídos ambientais. Ele é chamado de "branco" por analogia com a luz branca, que contém todas as cores do espectro visível.</p>
+        
+        <h2>Como funciona o ruído branco</h2>
+        
+        <p>O ruído branco atua como uma "cortina sonora" que ajuda a mascarar sons distrativos do ambiente. Quando ouvimos um som constante e uniforme, nosso cérebro tende a ignorá-lo após algum tempo, permitindo que nos concentremos melhor em outras atividades ou que adormeçamos mais facilmente.</p>
+        
+        <div class="pomodoro-cycle">
+            <h3>Principais benefícios do ruído branco:</h3>
+            <ul>
+                <li>Mascara ruídos ambientais (trânsito, conversas, eletrodomésticos)</li>
+                <li>Melhora a concentração durante estudos ou trabalho</li>
+                <li>Ajuda a induzir e manter o sono</li>
+                <li>Reduz a sensibilidade a ruídos repentinos</li>
+                <li>Cria um ambiente sonoro previsível e controlado</li>
+            </ul>
+        </div>
+        
+        <p>Esta ferramenta permite ajustar o volume e a frequência do ruído branco, criando ambientes sonoros personalizados para diferentes necessidades. Você pode desde um som suave para ajudar no sono até um som mais agudo para melhorar o foco durante atividades intelectuais.</p>
+        
+        <h2>Para quem é útil?</h2>
+        
+        <div class="highlight">
+            <p>O ruído branco pode ser útil para quem vive em ambientes ruidosos, tem dificuldade para dormir, precisa se concentrar em locais barulhentos ou sofre com sensibilidade a sons.</p>
+        </div>
+        
+        <p>Ele é indicado especialmente para:</p>
+        <ul>
+            <li>Trabalhadores remotos em ambientes urbanos</li>
+            <li>Estudantes que precisam se concentrar para estudos</li>
+            <li>Pessoas com dificuldade para iniciar ou manter o sono</li>
+            <li>Profissionais que trabalham em escritórios compartilhados</li>
+            <li>Mães e pais com bebês sensíveis a ruídos</li>
+        </ul>
+        
+        <h2>Quem utiliza ruído branco?</h2>
+        
+        <p>Muitos profissionais e pessoas em diferentes situações utilizam ruído branco no dia a dia. É muito popular entre:</p>
+        
+        <div class="professionals-list">
+            <span class="profession-tag">Programadores</span>
+            <span class="profession-tag">Escritores</span>
+            <span class="profession-tag">Estudantes</span>
+            <span class="profession-tag">Jornalistas</span>
+            <span class="profession-tag">Designers</span>
+            <span class="profession-tag">Pesquisadores</span>
+        </div>
+        
+        <p>O ruído branco também é utilizado em clínicas, escritórios, dormitórios universitários e até em unidades de terapia intensiva de hospitais para criar ambientes mais tranquilos e controlados. Com o avanço da tecnologia, diversas aplicações e dispositivos foram criados para gerar ruído branco, tornando-o acessível a qualquer pessoa.</p>
+        
+        <h2>Por que experimentar?</h2>
+        
+        <p>Se você tem dificuldade para se concentrar em ambientes barulhentos, sofre com insônia ou simplesmente busca um ambiente mais tranquilo para trabalhar ou estudar, o ruído branco pode ser uma solução simples e eficaz.</p>
+        
+        <p>Esta ferramenta gratuita permite que você experimente diferentes configurações de ruído branco e descubra qual funciona melhor para suas necessidades específicas. Ajuste o volume e a frequência, teste as predefinições e encontre o som ideal para melhorar sua produtividade ou qualidade do sono.</p>
+        
+        <p>Lembre-se: cada pessoa reage diferente aos sons, portanto, experimente várias configurações até encontrar a que funciona melhor para você.</p>
+    </article>
+    
+    <footer>
+        <p>Ferramenta desenvolvida para melhorar produtividade e qualidade do sono • DX Tools</p>
+    </footer>
+    </div>
+</body>
+</html>
