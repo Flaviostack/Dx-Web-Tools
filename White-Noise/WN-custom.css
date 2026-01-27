@@ -1,0 +1,651 @@
+/* Importar variáveis */
+@import url('variables.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: var(--container-padding);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================== */
+/* CONTAINER PRINCIPAL - RESPONSIVO            */
+/* =========================================== */
+.container {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: var(--gap-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: min(95%, 800px); /* Adaptável e máximo 800px */
+    text-align: center;
+    border: 1px solid var(--bg-tertiary);
+    margin: 1rem auto; /* Espaçamento responsivo */
+}
+
+/* =========================================== */
+/* TÍTULO - RESPONSIVO                         */
+/* =========================================== */
+.title {
+    color: var(--text-primary);
+    margin-bottom: var(--gap-lg);
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsivo com clamp */
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* =========================================== */
+/* CARD PRINCIPAL - RESPONSIVO                 */
+/* =========================================== */
+.card {
+    background: var(--bg-primary);
+    border-radius: 15px;
+    padding: clamp(1rem, 3vw, 2rem); /* Padding responsivo */
+    margin-bottom: var(--gap-md);
+    border: 1px solid var(--bg-tertiary);
+}
+
+/* =========================================== */
+/* GRUPOS DE ENTRADA - RESPONSIVOS             */
+/* =========================================== */
+.input-group {
+    margin: clamp(1rem, 2.5vw, 1.5rem) 0; /* Margem responsiva */
+    text-align: left;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* Fonte responsiva */
+}
+
+.value-display {
+    color: var(--component-primary);
+    font-weight: bold;
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+}
+
+/* =========================================== */
+/* SLIDERS - RESPONSIVOS                       */
+/* =========================================== */
+.slider {
+    width: 100%;
+    height: clamp(10px, 2vw, 12px); /* Altura responsiva */
+    -webkit-appearance: none;
+    background: linear-gradient(90deg, var(--component-primary), var(--component-tertiary));
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid var(--component-secondary);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: clamp(20px, 4vw, 25px); /* Tamanho responsivo */
+    height: clamp(20px, 4vw, 25px);
+    background: var(--component-contrast);
+    border-radius: 50%;
+    border: 3px solid var(--component-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: var(--component-secondary);
+}
+
+/* =========================================== */
+/* GRUPO DE BOTÕES - SUPER RESPONSIVO          */
+/* =========================================== */
+.button-group.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 1.5vw, 1rem); /* Gap responsivo */
+    justify-content: center;
+    margin: clamp(1rem, 2.5vw, 1.5rem) 0;
+}
+
+/* =========================================== */
+/* BOTÕES - RESPONSIVOS                        */
+/* =========================================== */
+.btn {
+    padding: clamp(0.6rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: max-content; /* Evita quebra de texto */
+    flex: 1 1 auto; /* Cresce e encolhe conforme espaço */
+    max-width: 100%;
+}
+
+/* Estilos específicos dos botões */
+.btn-primary {
+    background: var(--component-primary);
+    color: var(--text-contrast);
+}
+
+.btn-primary:hover {
+    background: var(--component-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--component-secondary);
+    color: var(--text-contrast);
+}
+
+.btn-secondary:hover {
+    background: var(--component-tertiary);
+    transform: translateY(-2px);
+}
+
+.btn-accent {
+    background: var(--component-contrast);
+    color: var(--text-contrast);
+}
+
+.btn-accent:hover {
+    background: var(--component-primary);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--component-primary);
+    color: var(--component-primary);
+}
+
+.btn-outline:hover {
+    background: var(--component-primary);
+    color: var(--text-contrast);
+    transform: translateY(-2px);
+}
+
+/* =========================================== */
+/* VISUALIZADOR - RESPONSIVO                   */
+/* =========================================== */
+.visualizer-container {
+    margin: clamp(1rem, 2.5vw, 1.5rem) 0;
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    border: 1px solid var(--bg-tertiary);
+}
+
+.visualizer-canvas {
+    width: 100%;
+    height: clamp(80px, 15vw, 120px); /* Altura responsiva */
+    display: block;
+    border-radius: 5px;
+    background: var(--bg-contrast);
+}
+
+/* =========================================== */
+/* SEÇÃO DE PREDEFINIÇÕES - RESPONSIVA         */
+/* =========================================== */
+.presets-section {
+    margin-top: clamp(1rem, 2.5vw, 1.5rem);
+    padding-top: clamp(0.75rem, 2vw, 1rem);
+    border-top: 2px solid var(--bg-tertiary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    text-align: center;
+    line-height: 1.3;
+}
+
+.preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+    justify-content: center;
+    margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+.preset-btn {
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+    background: var(--bg-tertiary);
+    border: 2px solid var(--component-secondary);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    flex: 1 1 auto;
+    min-width: max-content;
+    text-align: center;
+}
+
+.preset-btn:hover {
+    background: var(--component-primary);
+    color: var(--text-contrast);
+    border-color: var(--component-primary);
+    transform: translateY(-2px);
+}
+
+/* =========================================== */
+/* INFO TEXT - RESPONSIVO                      */
+/* =========================================== */
+.info-text {
+    margin-top: clamp(0.75rem, 2vw, 1rem);
+    color: var(--text-tertiary);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-style: italic;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* =========================================== */
+/* SEÇÃO DESCRITIVA COLAPSÁVEL - RESPONSIVA    */
+/* =========================================== */
+#descricao {
+    width: 100%;
+    max-width: min(95%, 800px);
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--bg-tertiary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Cabeçalho da descrição */
+#descricao > header {
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1.5rem, 4vw, 2rem);
+    background: var(--component-primary);
+    color: var(--text-contrast);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+#descricao > header:hover {
+    background: var(--component-secondary);
+}
+
+#descricao > header h1 {
+    margin: 0;
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    color: var(--text-contrast);
+    line-height: 1.3;
+}
+
+#descricao > header .subtitle {
+    margin: 0.5rem 0 0 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+}
+
+/* Ícone de seta */
+#descricao > header::after {
+    content: "▼";
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+#descricao.collapsed > header::after {
+    transform: rotate(-90deg);
+}
+
+/* Conteúdo da descrição */
+#descricao > article {
+    padding: clamp(1rem, 3vw, 2rem);
+    max-height: 2000px;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    background: var(--bg-primary);
+    line-height: 1.6;
+}
+
+#descricao.collapsed > article {
+    max-height: 0;
+    padding: 0 clamp(1.5rem, 4vw, 2rem);
+}
+
+/* Estilos do conteúdo do artigo */
+#descricao article p {
+    line-height: 1.6;
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--text-primary);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+#descricao article h2 {
+    color: var(--component-primary);
+    margin: clamp(1.5rem, 3vw, 2rem) 0 1rem 0;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    line-height: 1.3;
+}
+
+#descricao article h3 {
+    color: var(--text-secondary);
+    margin: clamp(1rem, 2.5vw, 1.5rem) 0 1rem 0;
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+    line-height: 1.3;
+}
+
+#descricao .pomodoro-cycle {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--component-primary);
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    margin: clamp(1rem, 2.5vw, 1.5rem) 0;
+    border-radius: 0 8px 8px 0;
+}
+
+#descricao .pomodoro-cycle ul {
+    padding-left: clamp(1rem, 2.5vw, 1.5rem);
+    margin: 1rem 0;
+}
+
+#descricao .pomodoro-cycle li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+#descricao .highlight {
+    background: var(--component-contrast);
+    color: var(--text-contrast);
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    border-radius: 8px;
+    margin: clamp(1rem, 2.5vw, 1.5rem) 0;
+    font-weight: 500;
+}
+
+#descricao .highlight p {
+    margin: 0;
+    color: var(--text-contrast);
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+}
+
+#descricao ul {
+    padding-left: clamp(1rem, 2.5vw, 1.5rem);
+    margin: 1rem 0;
+}
+
+#descricao li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+#descricao .professionals-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+    margin: clamp(1rem, 2.5vw, 1.5rem) 0;
+}
+
+#descricao .profession-tag {
+    background: var(--component-secondary);
+    color: var(--text-contrast);
+    padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
+    border-radius: 20px;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Footer da descrição */
+#descricao > footer {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    background: var(--bg-tertiary);
+    color: var(--text-tertiary);
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    border-top: 1px solid var(--bg-tertiary);
+    line-height: 1.4;
+}
+
+/* =========================================== */
+/* MEDIA QUERIES ESPECÍFICAS                   */
+/* =========================================== */
+
+/* Telas MUITO pequenas (até 320px) - Smartphones muito pequenos */
+@media (max-width: 320px) {
+    body {
+        padding: 0.5rem;
+    }
+    
+    .container {
+        padding: 0.75rem;
+        border-radius: 15px;
+    }
+    
+    .card {
+        padding: 0.75rem;
+        border-radius: 12px;
+    }
+    
+    .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+    
+    .preset-btn {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        border-radius: 20px;
+    }
+    
+    .button-group.flex-row {
+        gap: 0.4rem;
+    }
+    
+    #descricao > header {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #descricao > header::after {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    #descricao > header h1 {
+        font-size: 1.1rem;
+    }
+    
+    #descricao > header .subtitle {
+        font-size: 0.8rem;
+    }
+}
+
+/* Telas PEQUENAS (321px a 480px) - Smartphones */
+@media (min-width: 321px) and (max-width: 480px) {
+    body {
+        padding: 0.75rem;
+    }
+    
+    .container {
+        padding: 1rem;
+        border-radius: 18px;
+    }
+    
+    .card {
+        padding: 1rem;
+        border-radius: 14px;
+    }
+    
+    .button-group.flex-row {
+        gap: 0.5rem;
+    }
+    
+    .btn {
+        flex: 0 1 calc(50% - 0.5rem); /* 2 botões por linha */
+        min-width: 0;
+    }
+    
+    .preset-btn {
+        flex: 0 1 100%; /* 1 botão por linha */
+    }
+    
+    .preset-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #descricao > header {
+        flex-wrap: wrap;
+    }
+    
+    #descricao > header h1 {
+        flex: 1 1 100%;
+    }
+    
+    #descricao > header .subtitle {
+        flex: 1 1 100%;
+    }
+}
+
+/* Telas MÉDIAS-PEQUENAS (481px a 768px) - Tablets pequenos/Phablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 1.25rem;
+    }
+    
+    .card {
+        padding: 1.25rem;
+    }
+    
+    .button-group.flex-row {
+        gap: 0.75rem;
+    }
+    
+    .btn {
+        flex: 0 1 calc(50% - 0.75rem); /* 2 botões por linha */
+    }
+    
+    .btn:nth-child(5) { /* Reset button ocupa linha inteira */
+        flex: 1 1 100%;
+    }
+    
+    #descricao > header {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+/* Telas MÉDIAS (769px a 1024px) - Tablets/Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .button-group.flex-row {
+        gap: 1rem;
+    }
+    
+    .btn {
+        flex: 0 1 calc(33.333% - 1rem); /* 3 botões por linha */
+    }
+    
+    .btn:nth-child(4),
+    .btn:nth-child(5) { /* Últimos 2 botões em linha própria */
+        flex: 0 1 calc(50% - 1rem);
+    }
+}
+
+/* Telas GRANDES (1025px+) - Desktops */
+@media (min-width: 1025px) {
+    .button-group.flex-row {
+        gap: 1rem;
+    }
+    
+    .btn {
+        flex: 0 1 auto; /* Tamanho automático */
+    }
+}
+
+/* =========================================== */
+/* AJUSTES PARA ORIENTAÇÃO LANDSCAPE           */
+/* =========================================== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .container {
+        margin: 0.5rem auto;
+        max-width: 95%;
+    }
+    
+    .card {
+        padding: 0.75rem;
+    }
+    
+    .visualizer-canvas {
+        height: 60px; /* Menor altura em landscape */
+    }
+    
+    #descricao {
+        margin-top: 1rem;
+    }
+}
+
+/* =========================================== */
+/* MELHORIAS DE ACESSIBILIDADE                 */
+/* =========================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Suporte a dark mode do sistema */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+}
+
+/* Impressão */
+@media print {
+    .btn,
+    .preset-btn,
+    .slider,
+    .visualizer-container,
+    #descricao > header {
+        display: none !important;
+    }
+    
+    .container {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

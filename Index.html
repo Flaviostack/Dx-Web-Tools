@@ -48,18 +48,43 @@
     <!-- Container principal que agrupa todas as ferramentas -->
     <div class="main-container">
         <!-- PRIMEIRO GRUPO: Estudos -->
-        <h3 id="titulo-menu">Estudos</h3>
         <div class="flex-container" id="menu-estudos">
-            <div class="flex-box">
-                <div class="flex-item" id="pomodorodisplay">
-                    <!-- Link para o timer pomodoro -->
-                    <img src="./Home/assets/img/clock-icon.svg" alt="Ícone de timer" width="50" height="50">
-                    <a href="./PomodoroTimer-DxTools/Index.html" id="redirecionar"
-                    title="Timer pomodoro pra te ajudar a se concentrar.">Pomodoro Timer</a> 
-                </div>
+    <h2 class="titulo-menu">Ferramentas de Produtividade</h2>
+    
+    <div class="tools-grid">
+        <!-- Pomodoro Timer -->
+        <div class="tool-card" id="pomodorodisplay">
+            <div class="tool-icon">
+                <img src="./Home/assets/img/clock-icon.svg" alt="Ícone de timer Pomodoro" width="60" height="60">
             </div>
-            <!-- Adicionar mais itens de estudos aqui futuramente -->
-        </div> <!-- Fechando a div com id "menu-estudos" -->
+            <div class="tool-content">
+                <h3 class="tool-title">Pomodoro Timer</h3>
+                <p class="tool-description">Técnica para gerenciamento de tempo com sessões de foco e intervalos planejados</p>
+                <a href="./PomodoroTimer-DxTools/Index.html" class="tool-link"
+                   title="Timer pomodoro para melhorar sua concentração e produtividade.">
+                   Acessar Timer
+                </a>
+            </div>
+        </div>
+        
+        <!-- Gerador de Ruído Branco -->
+        <div class="tool-card" id="ruidobrancodisplay">
+            <div class="tool-icon">
+                <img src="./Home/assets/img/noise-icon.svg" alt="Ícone de ruído branco" width="60" height="60">
+            </div>
+            <div class="tool-content">
+                <h3 class="tool-title">Ruído Branco</h3>
+                <p class="tool-description">Gerador de som ambiente para mascarar ruídos e melhorar foco e sono</p>
+                <a href="./White-Noise/Index.html" class="tool-link"
+                   title="Gerador de ruído branco para melhorar concentração e qualidade do sono.">
+                   Acessar Gerador
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Adicionar mais itens de estudos aqui futuramente -->
+</div>
 
         <!-- SEGUNDO GRUPO: Cálculos e conversões -->
         <h3 id="titulo-calculos">Cálculos e conversões</h3>
