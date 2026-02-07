@@ -150,5 +150,40 @@
         <p>Contato: <a href="mailto:FlavioAugusto10714@gmail.com" id="email">FlavioAugusto10714@gmail.com</a></p>
     </div>
 
+
+<!--   cookies   -->
+<div id="cookie-banner" class="cookie-container">
+    <div class="cookie-content">
+        <p>
+            Utilizamos cookies para personalizar anúncios e analisar nosso tráfego. 
+            O Google, como fornecedor terceirizado, utiliza cookies para exibir anúncios no <strong>DX Tools</strong>. 
+            O uso do cookie de publicidade permite ao Google e aos parceiros exibir anúncios com base nas suas visitas a este e a outros sites na internet. 
+            Você pode aceitar todos os cookies ou gerenciar suas preferências.
+        </p>
+        <div class="cookie-buttons">
+            <button onclick="acceptCookies()" class="btn-cookie accept">Aceitar</button>
+            <a href="https://policies.google.com/technologies/ads" target="_blank" class="btn-cookie info">Saiba mais</a>
+        </div>
+    </div>
+</div>
+<script>
+    const cookieBanner = document.getElementById('cookie-banner');
+
+    // Verifica se o usuário já aceitou os cookies anteriormente
+    window.onload = function() {
+        if (!localStorage.getItem('cookiesAceitos')) {
+            setTimeout(() => {
+                cookieBanner.classList.add('active');
+            }, 1000); // Aparece após 1 segundo
+        }
+    }
+
+    // Função para salvar a preferência e fechar o banner
+    function acceptCookies() {
+        localStorage.setItem('cookiesAceitos', 'true');
+        cookieBanner.classList.remove('active');
+    }
+</script>
+
 </body>
 </html>
