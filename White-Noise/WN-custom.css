@@ -19,6 +19,9 @@ body {
     align-items: center;
 }
 
+body > #redirecionar {
+    align-self: flex-start;
+}
 /* =========================================== */
 /* CONTAINER PRINCIPAL - RESPONSIVO            */
 /* =========================================== */
